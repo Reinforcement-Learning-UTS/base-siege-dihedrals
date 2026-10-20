@@ -48,6 +48,9 @@ complete raw training episode histories. TensorBoard can support diagnostic plot
 only for values that were actually logged. None of these limitations should be
 filled with invented training data.
 
+Original console progress and timing logs are retained in `artifacts/console-logs/`.
+These logs supplement the canonical completion records; they do not replace them.
+
 ## Interpretation limits
 
 The simulator uses simplified combat and partial observations. Its target and

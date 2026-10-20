@@ -36,6 +36,6 @@ uv run --frozen python -m ipykernel install --user --name base-siege --display-n
 if [[ "$LFS_MODE" != none ]]; then
   mkdir -p local-output
   report="local-output/studio-models-$(date -u +%Y%m%dT%H%M%SZ).json"
-  uv run --frozen python tools/check_demo_models.py --out "$report"
+  uv run --frozen python tools/check_demo_models.py --integrity-only --out "$report"
 fi
 printf 'Project ready: %s\nOpen notebooks/00_sagemaker_setup.ipynb with the Base Siege kernel.\n' "$PROJECT_DIR"

@@ -48,6 +48,13 @@ esac
 export PATH="$HOME/.local/bin:$PATH"
 cd "$PROJECT_DIR"
 [[ -f "$ENTRY" ]] || { echo "$PROJECT_DIR has no $ENTRY; is this the project root?" >&2; exit 1; }
+APP_PYTHON="$PROJECT_DIR/.venv-app/bin/python"
+if [[ ! -x "$APP_PYTHON" ]]; then
+  echo 'Create the separate CPU app environment first:' >&2
+  echo '  uv venv --python 3.12.14 .venv-app' >&2
+  echo '  uv pip install --python .venv-app/bin/python -r ui/requirements.txt' >&2
+  exit 1
+fi
 
 if command -v lsof >/dev/null 2>&1 && lsof -i :"$PORT" >/dev/null 2>&1; then
   echo "Port $PORT is already in use. Pass --port with a free port." >&2; exit 1
@@ -92,11 +99,11 @@ ARGS=(
 )
 
 if [[ "$BACKGROUND" -eq 1 ]]; then
-  nohup uv run --frozen streamlit run "$ENTRY" "${ARGS[@]}" \
+  nohup "$APP_PYTHON" -m streamlit run "$ENTRY" "${ARGS[@]}" \
     > streamlit.log 2>&1 &
   echo "Started in the background (pid $!). Log: $PROJECT_DIR/streamlit.log"
   echo "Stop it with: kill $!"
 else
   echo "Ctrl+C to stop."
-  exec uv run --frozen streamlit run "$ENTRY" "${ARGS[@]}"
+  exec "$APP_PYTHON" -m streamlit run "$ENTRY" "${ARGS[@]}"
 fi

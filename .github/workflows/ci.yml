@@ -26,14 +26,17 @@ jobs:
         run: |
           git lfs install --local
           git lfs pull --include="$(cat models/lfs-paths.txt)"
-      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
-        with:
-          python-version: "3.12.14"
-          cache: pip
-          cache-dependency-path: |
-            ui/requirements.txt
-            deployment/requirements-test.txt
-            deployment/requirements-project-test.txt
+      - name: Install exact recorded research Python
+        # setup-python does not provide this security release for macOS ARM.
+        env:
+          PYTHON_ARCHIVE_SHA256: c2edb321cd32ec2b170df208db0446dccc4398db602ca27cf2079098fb1f7d9d
+        run: |
+          curl --fail --location --retry 3 --output "$RUNNER_TEMP/python.tar.gz" https://github.com/astral-sh/python-build-standalone/releases/download/20260924/cpython-3.12.14%2B20260924-aarch64-apple-darwin-install_only_stripped.tar.gz
+          echo "$PYTHON_ARCHIVE_SHA256  $RUNNER_TEMP/python.tar.gz" | shasum -a 256 --check
+          mkdir -p "$RUNNER_TEMP/research-python"
+          tar -xzf "$RUNNER_TEMP/python.tar.gz" -C "$RUNNER_TEMP/research-python"
+          echo "$RUNNER_TEMP/research-python/python/bin" >> "$GITHUB_PATH"
+      - run: python -m ensurepip --upgrade
       - run: python -m pip install -r ui/requirements.txt -r deployment/requirements-project-test.txt
       - run: python -m pip check
       - run: mkdir -p local-output

@@ -1,8 +1,12 @@
 # Architecture
 
-## One authoritative environment
+## Simulator and browser responsibilities
 
-The app, baselines, notebooks and PPO all use `SiegeEnv`. Only that environment advances the battle. A replay displays saved decision snapshots; it does not recalculate combat in JavaScript.
+`SiegeEnv` is the reference environment for research, baselines and learned-policy
+replays. Manual play runs combat in `ui/frontend/manual_engine.js` for responsive
+browser controls. Parity tests compare its actions, ticks and results with the
+Python simulator. Recorded-policy playback displays saved snapshots and tick
+frames; it does not simulate those attacks again in JavaScript.
 
 ```text
 seed + motif → BaseSpec → BattleState

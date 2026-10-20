@@ -10,6 +10,8 @@ described separately in [deployment](DEPLOYMENT.md).
 Install Git LFS and uv using their official instructions, then run the bootstrap
 from a terminal. It clones the organization repository with automatic LFS download
 disabled, fetches the approved final checkpoints and builds the locked environment.
+Its integrity check verifies original model weights and catalogued manifests without
+loading them into the research runtime.
 For an existing checkout, pass `--skip-clone --dir /absolute/project/path`.
 
 ```bash
@@ -51,7 +53,13 @@ Keep original evidence untouched and use a fresh destination for new checks.
 
 ## Interactive app in Studio
 
+Use a separate CPU environment for the app. The research lock can install CUDA
+PyTorch, which intentionally fails the CPU-only DDQN application guard.
+
 ```bash
+cd /absolute/project/path
+uv venv --python 3.12.14 .venv-app
+uv pip install --python .venv-app/bin/python -r ui/requirements.txt
 bash sagemaker_app.sh --dir /absolute/project/path
 ```
 

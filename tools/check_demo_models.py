@@ -14,6 +14,30 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 
+def check_files(root=ROOT):
+    """Verify catalogued weights/manifests without importing an inference runtime."""
+    root = Path(root).resolve()
+    models = json.loads((root / 'models/catalog.json').read_text())['models']
+    if len(models) != 51 or len({item['sha256'] for item in models}) != 51:
+        raise ValueError('Expected 51 distinct approved final checkpoints.')
+    checked = []
+    for item in models:
+        for key, checksum in (('path', 'sha256'), ('manifest_path', 'manifest_sha256')):
+            if key not in item:
+                continue
+            path = root / item[key]
+            if not path.resolve().is_relative_to(root) or path.is_symlink():
+                raise ValueError('A catalogued file leaves the project directory.')
+            if hashlib.sha256(path.read_bytes()).hexdigest() != item[checksum]:
+                raise ValueError('Catalogued file checksum differs: ' + item[key])
+        if (root / item['path']).stat().st_size != item['size']:
+            raise ValueError('Checkpoint size differs: ' + item['path'])
+        checked.append(item['path'])
+    return {'status': 'passed', 'verified_models': len(checked),
+            'checkpoint_bytes': sum(item['size'] for item in models),
+            'scope': 'Original model weights and catalogued training manifests; no inference or runtime compatibility check'}
+
+
 def check():
     from ui.deployment import load_cpu_policy
     from ui.policy_playback import record_policy, validate_compatibility
@@ -74,8 +98,10 @@ def check():
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--out", required=True, type=Path)
+    parser.add_argument("--integrity-only", action="store_true",
+                        help="Check original bytes without importing CPU inference dependencies.")
     args = parser.parse_args()
-    result = check()
+    result = check_files() if args.integrity_only else check()
     args.out.write_text(json.dumps(result, indent=2) + "\n")
     print(json.dumps({key: value for key, value in result.items() if key != "models"}))
     raise SystemExit(result["status"] != "passed")
