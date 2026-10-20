@@ -1,0 +1,35 @@
+# Local Python environments and caches
+**/__pycache__/
+*.py[cod]
+.venv/
+.venv-*/
+venv/
+.pytest_cache/
+.ruff_cache/
+.uv-cache/
+.browser-cache/
+**/.ipynb_checkpoints/
+
+# Credentials and operating-system files
+.env
+.env.*
+!.env.example
+**/.streamlit/secrets.toml
+**/.aws/
+**/.ssh/
+.DS_Store
+
+# New execution outputs. Existing versioned research evidence is retained.
+local-output/
+artifacts/local-*/
+artifacts/ci-*/
+artifacts/ci-tests.xml
+artifacts/streamlit-deploy*/
+runs/local-*/
+*.tmp
+*.partial
+**/STOP_REQUESTED.json
+**/.run.lock
+*.log
+
+# Dependency locks such as uv.lock are intentionally versioned.

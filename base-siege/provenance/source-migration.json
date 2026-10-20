@@ -1,0 +1,509 @@
+{
+  "files": {
+    "conftest.py": {
+      "classification": "comments-and-docstrings",
+      "migrated_bytes": 229,
+      "migrated_executable_ast_sha256": "acc9a1767573fc9550996e1e363486313aa226c18f2ad341e1dffa7b684bb6e9",
+      "migrated_sha256": "2ace809413dd1998701b367b0632dda17b39a5f802447ff8f8d75fa46401bf23",
+      "original_bytes": 483,
+      "original_executable_ast_sha256": "acc9a1767573fc9550996e1e363486313aa226c18f2ad341e1dffa7b684bb6e9",
+      "original_sha256": "fcdc40eec489572ecd73f5bd27410b3a68ddf3fdf88c26eb68ed1e93cfd95f28",
+      "reason": "Presentation-only source cleanup; executable AST unchanged."
+    },
+    "ddqn_experiment/evaluation.py": {
+      "classification": "compatibility-validation",
+      "migrated_bytes": 7217,
+      "migrated_executable_ast_sha256": "4fb066654aa39a5766893a270782207baa29c1812fc47dd6f2855fdac5c4c72c",
+      "migrated_sha256": "880ae914335226dffab8a96c1828772934c55cba50aefa787aebcb7a0a0c8ab2",
+      "original_bytes": 7151,
+      "original_executable_ast_sha256": "54130c04e6306bc0e8fbd7e7b04e95a7c6bac70fee161da4fe789ba411c8451f",
+      "original_sha256": "7ae18d2aad4d705d7e02d991eebc94e0fb032111d9339e7117230048816fab55",
+      "reason": "Recognize only the pinned source migration; model, input, runtime and historical-record checks remain strict."
+    },
+    "ddqn_experiment/runner.py": {
+      "classification": "compatibility-validation",
+      "migrated_bytes": 16757,
+      "migrated_executable_ast_sha256": "0d8cf12e49ebc756687faa1a6eee95f1d4a6d5231601300d9758532a9a69db12",
+      "migrated_sha256": "2fc37d051fcbed7c1e7019dfdb4f614654bfb7a45f8c484ed3251281f9a124fd",
+      "original_bytes": 16418,
+      "original_executable_ast_sha256": "2d9651f11361bea4b96d9aeaf5a4df53ca40ad76321524e32df5d1079ab599b4",
+      "original_sha256": "deeb3eb41134edabff23b2e87327f3dcfa77885463183e2c45dd7449585ed233",
+      "reason": "Recognize only the pinned source migration; model, input, runtime and historical-record checks remain strict."
+    },
+    "ddqn_final_benchmark/runner.py": {
+      "classification": "compatibility-validation",
+      "migrated_bytes": 18163,
+      "migrated_executable_ast_sha256": "352f13dd9d4d639aa8131c90acf95f59baa883b71958107aa948dc5712e5ae72",
+      "migrated_sha256": "60cb467b97b7cbd2df66d54d2d9251a9372395a6014acf6309cda4e7457ce21f",
+      "original_bytes": 17895,
+      "original_executable_ast_sha256": "ff4f12f03fd2e8459f682cadd9d134c5b1d7f473eab59261ad3996a0c426b649",
+      "original_sha256": "e75fcde12644cda9d93b2f62df1169dd977f3068f1ca1d9d703050581a0409ef",
+      "reason": "Recognize only the pinned source migration; model, input, runtime and historical-record checks remain strict."
+    },
+    "diagnose_policy_sampling.py": {
+      "classification": "compatibility-validation",
+      "migrated_bytes": 20836,
+      "migrated_executable_ast_sha256": "5282b59b5fbb0aaa2afb6af0140d9fa976639b5dbcbc438bb688f889c58e5a5d",
+      "migrated_sha256": "e0a4145559960114eb2f4f3a17f7a1063831f3180b98c41de820b8fc05d17f58",
+      "original_bytes": 20665,
+      "original_executable_ast_sha256": "8d569f733e9a9a92d2268f44ddf045c791f57b45966adb9f1d3d21d5dd6037b3",
+      "original_sha256": "420e07d5a741b42be1afd0993c0f5fd7c5c190de02540a9a7b306ea715808261",
+      "reason": "Recognize only the pinned source migration; model, input, runtime and historical-record checks remain strict."
+    },
+    "env/combat.py": {
+      "classification": "comments-and-docstrings",
+      "migrated_bytes": 24048,
+      "migrated_executable_ast_sha256": "c793a834d12e4943d83071e0a539db43c8a89c8be0122d252dcd0412f718df96",
+      "migrated_sha256": "d441c9229858c9cd7528704863529a2ec7df2ef845f7e52c727adc05e02a3921",
+      "original_bytes": 24084,
+      "original_executable_ast_sha256": "c793a834d12e4943d83071e0a539db43c8a89c8be0122d252dcd0412f718df96",
+      "original_sha256": "2bf73fe3d2a5789f2817c25dadab1018994d46a07de30fe7754d2ddc129aa711",
+      "reason": "Presentation-only source cleanup; executable AST unchanged."
+    },
+    "env/config.py": {
+      "classification": "comments-and-docstrings",
+      "migrated_bytes": 23978,
+      "migrated_executable_ast_sha256": "b0b8f36401b2d4d0c96375bb400f1f2f589b1f7962fa3fb50aa5ce4d43b6cc4b",
+      "migrated_sha256": "fda977308e3cee1f43c66978de5c1fb381b014cb29c997503ffc0271af5aea31",
+      "original_bytes": 24032,
+      "original_executable_ast_sha256": "b0b8f36401b2d4d0c96375bb400f1f2f589b1f7962fa3fb50aa5ce4d43b6cc4b",
+      "original_sha256": "57c4cf0c7ea14d2d192dac2aafc4d582dd0e48c987ecb7cccf5b5b8d61d5e4ce",
+      "reason": "Presentation-only source cleanup; executable AST unchanged."
+    },
+    "env/entities.py": {
+      "classification": "comments-and-docstrings",
+      "migrated_bytes": 12269,
+      "migrated_executable_ast_sha256": "3addd59ec1b66443391a218fe6b8d98347f7b402be44440d7284a89bd65006b8",
+      "migrated_sha256": "5006a563a8ccb7e1c1682d9053764a4dcc2f3d644fdd8c95297b8fd95b4a99cc",
+      "original_bytes": 12305,
+      "original_executable_ast_sha256": "3addd59ec1b66443391a218fe6b8d98347f7b402be44440d7284a89bd65006b8",
+      "original_sha256": "a3076b5a65dca0ce0cb81276c2392d2bae5258e900d276f64f8fbf6064248aed",
+      "reason": "Presentation-only source cleanup; executable AST unchanged."
+    },
+    "env/generator.py": {
+      "classification": "comments-and-docstrings",
+      "migrated_bytes": 15849,
+      "migrated_executable_ast_sha256": "8bb38d63fdc88a5ea871dcaef4b10f55bfd7cabfbc33a1a6916620bd28f47323",
+      "migrated_sha256": "945088942d036ced691459c80c9fa3ba2cf9a3557567a659beefc7e2d1b92c1c",
+      "original_bytes": 15875,
+      "original_executable_ast_sha256": "8bb38d63fdc88a5ea871dcaef4b10f55bfd7cabfbc33a1a6916620bd28f47323",
+      "original_sha256": "190beda431286c394eeb5c6ad20d95b9a05ba4564f6a36cd24e125fc9c2ccab9",
+      "reason": "Presentation-only source cleanup; executable AST unchanged."
+    },
+    "env/pathfinding.py": {
+      "classification": "comments-and-docstrings",
+      "migrated_bytes": 15284,
+      "migrated_executable_ast_sha256": "e5267435dff6915ed7a5c93338f217dbd0cfac168c5958dd77e0d1cab51e9bba",
+      "migrated_sha256": "673cbe262d45d9a3bbb9e26924907b2f259c3d569e6b0753746da500ed1ead47",
+      "original_bytes": 15320,
+      "original_executable_ast_sha256": "e5267435dff6915ed7a5c93338f217dbd0cfac168c5958dd77e0d1cab51e9bba",
+      "original_sha256": "f0a375ec20e2727b8131c9862fb7ea37363d80ad477cbb90e7b330e1f20d016e",
+      "reason": "Presentation-only source cleanup; executable AST unchanged."
+    },
+    "env/render.py": {
+      "classification": "comments-and-docstrings",
+      "migrated_bytes": 20820,
+      "migrated_executable_ast_sha256": "f61a8656617da56f41ca2bbcc17c8dc0d00c755c2874f03b9bda8f5d85c804ab",
+      "migrated_sha256": "f9a5b69ec923c944ac2d53ad1daf3b398ed89b4f8b8508c6c7a773ad67395dbf",
+      "original_bytes": 20826,
+      "original_executable_ast_sha256": "f61a8656617da56f41ca2bbcc17c8dc0d00c755c2874f03b9bda8f5d85c804ab",
+      "original_sha256": "2aa74fc376175824b123c9fbbcecf172e030eabd4d5010cc65d8ee686b40bfb1",
+      "reason": "Presentation-only source cleanup; executable AST unchanged."
+    },
+    "evaluate_sampled_development.py": {
+      "classification": "compatibility-validation",
+      "migrated_bytes": 18008,
+      "migrated_executable_ast_sha256": "ce90daf1c0a0f26a18828122369153c1f2d2f43b5a8c8a492fe97e6e4b720698",
+      "migrated_sha256": "051dfea4e63aecdfd8cd56e1e43d06037d7f5c73742b2a4629dd010797042a57",
+      "original_bytes": 17884,
+      "original_executable_ast_sha256": "7049ce9a7959521a8c6c1a4862bc4aa3b0e2dc08e3f6e7cd19dcf8affc3a43af",
+      "original_sha256": "9380ec90389a86f84eb6b42af7a5f7798d3c9120fe5fae08d2fa1e906f134ce8",
+      "reason": "Recognize only the pinned source migration; model, input, runtime and historical-record checks remain strict."
+    },
+    "experiments/pilot.py": {
+      "classification": "compatibility-validation",
+      "migrated_bytes": 6449,
+      "migrated_executable_ast_sha256": "a23586b8e8c526ca4276cddfaa8f0a7174ad56e2fa3daa260ddd47bef4a69a0d",
+      "migrated_sha256": "8cc81ea4a36d8ad63f5c6984d398aea8f755dd362c2c68e46a4832e750f1b31f",
+      "original_bytes": 6360,
+      "original_executable_ast_sha256": "5d696800ded428edfc6059c642e0186db9831fab5cf7d3b24701acda3797b937",
+      "original_sha256": "8410d23b0fff2db48b2fec02f08bae84d41efef0b05fe36c539133dd3cab700c",
+      "reason": "Recognize only the pinned source migration; model, input, runtime and historical-record checks remain strict."
+    },
+    "experiments/pools.py": {
+      "classification": "compatibility-validation",
+      "migrated_bytes": 7497,
+      "migrated_executable_ast_sha256": "1394bc8fd02ff15074b83e547df5e9b0198d3637c05cb669fc3452da39051015",
+      "migrated_sha256": "7b48eea9a652f9b80ef5430fa63fd70c11c56efd778949aa7acb501ce989f1f9",
+      "original_bytes": 7431,
+      "original_executable_ast_sha256": "810be7a7101671d077fd40c772727bacb102b22f36a2ad1825907c8bbd4dfc65",
+      "original_sha256": "f56b0d8f6b655eab7788e02265f73548c3bc29b9be8746878e9927177ab7bd9b",
+      "reason": "Recognize only the pinned source migration; model, input, runtime and historical-record checks remain strict."
+    },
+    "experiments/protocol.py": {
+      "classification": "compatibility-validation",
+      "migrated_bytes": 9276,
+      "migrated_executable_ast_sha256": "cfacfbcb6938e43ceabc054154b78b15afc8da845a7bd7e88c3031d36849c497",
+      "migrated_sha256": "0bd93b71a90d0ca80c47bc14d599730c2b0c9f7356fc3230a098e3f10cba9954",
+      "original_bytes": 9187,
+      "original_executable_ast_sha256": "5aa57659614733b354b06eea04ff89234de9ad9cebde5f45b588768218254832",
+      "original_sha256": "8580719d10b4907728921aa946729f6a61311af45376ebd1a2788273d6334917",
+      "reason": "Recognize only the pinned source migration; model, input, runtime and historical-record checks remain strict."
+    },
+    "experiments/study.py": {
+      "classification": "compatibility-validation",
+      "migrated_bytes": 6464,
+      "migrated_executable_ast_sha256": "1e6618b44dc2ca27b4789b69e270e71b794f6b06dbdf0a410e0f3b90a3affadf",
+      "migrated_sha256": "09d1b7f55739233333e42475191fcd4279cfad71a36a87b9549bdb57f7e225ea",
+      "original_bytes": 6398,
+      "original_executable_ast_sha256": "138137c11f3ca4c462509ed13bc49dcbc71409bf0428e16dbec1394e5c784201",
+      "original_sha256": "67392847f85d530cc42bd6e751c887216d5febd2f7ed1e9c31a431a3360e1160",
+      "reason": "Recognize only the pinned source migration; model, input, runtime and historical-record checks remain strict."
+    },
+    "source_check.py": {
+      "classification": "migration-tooling",
+      "migrated_bytes": 950,
+      "migrated_executable_ast_sha256": "7d48991560d8e3cb9fd0d57988c1e98daf9062cb29b709ae958aa2f67d26b649",
+      "migrated_sha256": "60d7566b763f23ddf43153abc96349676c026bc159e38b61650735ddea48bfe7",
+      "original_bytes": 952,
+      "original_executable_ast_sha256": "e591b84437ba330784322345e40120f15fc4307abe3084f3c3f80d003c82a114",
+      "original_sha256": "c2bea220bb528c702e46a85b88d166fc95669bd83862850556a7f492aba22521",
+      "reason": "Reviewed local migration tooling and presentation integration."
+    },
+    "tests/test_combat.py": {
+      "classification": "validation",
+      "migrated_bytes": 23634,
+      "migrated_executable_ast_sha256": "9234224c6190325d784946ccc49a719223eb1415f90f21b275a64aec7ea56a76",
+      "migrated_sha256": "50e3d384e14b711a883fffbee34979cc0119ba9fe6400156c1e3baba30470960",
+      "original_bytes": 23662,
+      "original_executable_ast_sha256": "74821552b48aaa35edb2519e8ba2bebc6b8b6d68680d3878ee3552de768516da",
+      "original_sha256": "c6bc6ffd69715c4a85c0d91071d80770233acaa9b2c9605d616307b51471019e",
+      "reason": "Migration and regression test integration."
+    },
+    "tests/test_config.py": {
+      "classification": "validation",
+      "migrated_bytes": 25027,
+      "migrated_executable_ast_sha256": "85f116f2a74e2383490056d860ea440aefcf18747751bcc2ee20aa98b25cf229",
+      "migrated_sha256": "136b6260aabe2204bbcedfc690c4c14c220efc68e89081e1a49fbc6c9bd4fcc4",
+      "original_bytes": 25050,
+      "original_executable_ast_sha256": "f44778e2d4957516b5a5cfa3342d07ce99002ae4163d6e7394452ec4d29261ec",
+      "original_sha256": "8678f27ff9bacabea113e47871e66b6c3817ada39af77f89e3f32cdc811eae4a",
+      "reason": "Migration and regression test integration."
+    },
+    "tests/test_entities.py": {
+      "classification": "comments-and-docstrings",
+      "migrated_bytes": 9862,
+      "migrated_executable_ast_sha256": "223a111962af7f844015e881d37de12686fe3c3829e6b20843725148d64b4a9a",
+      "migrated_sha256": "77e4e3e3b3e6625f89b257b91c4fca987a62a19eb9ac3366a0b43c23f0761e76",
+      "original_bytes": 9866,
+      "original_executable_ast_sha256": "223a111962af7f844015e881d37de12686fe3c3829e6b20843725148d64b4a9a",
+      "original_sha256": "cdca2d61f48e93ddd0cbd621fe9b64bdc46e0be39d3b4bb78cc3597aff9d31c1",
+      "reason": "Presentation-only source cleanup; executable AST unchanged."
+    },
+    "tests/test_generator.py": {
+      "classification": "comments-and-docstrings",
+      "migrated_bytes": 11296,
+      "migrated_executable_ast_sha256": "8b36cb9bd177f58ad9f3ee2435d06568d496d3fbb7ada7cc20ef6c8eccb449a9",
+      "migrated_sha256": "f8e2b753e36cc9f4d946f06ab8c65b5e02238baad024d1cc4003045c4f7c3910",
+      "original_bytes": 11303,
+      "original_executable_ast_sha256": "8b36cb9bd177f58ad9f3ee2435d06568d496d3fbb7ada7cc20ef6c8eccb449a9",
+      "original_sha256": "de46d42d020ec67d554a7ca8765231c8fde961a2c10870a0228d02c6dab4430c",
+      "reason": "Presentation-only source cleanup; executable AST unchanged."
+    },
+    "tests/test_pathfinding.py": {
+      "classification": "comments-and-docstrings",
+      "migrated_bytes": 12480,
+      "migrated_executable_ast_sha256": "f98683abc575ca54d1845deb32155799141447ee7e3534b2695ad0d4e46e3057",
+      "migrated_sha256": "76df6f6444a88b354758576419d38b7f8bff9e7f37cba2e9fa8135a55715c2df",
+      "original_bytes": 12490,
+      "original_executable_ast_sha256": "f98683abc575ca54d1845deb32155799141447ee7e3534b2695ad0d4e46e3057",
+      "original_sha256": "d0e6e2cc0b7bd9056f1b718c246ca73abad115b5868c645110c21eadc09682b8",
+      "reason": "Presentation-only source cleanup; executable AST unchanged."
+    },
+    "tests/test_prototype_parity.py": {
+      "classification": "comments-and-docstrings",
+      "migrated_bytes": 6670,
+      "migrated_executable_ast_sha256": "6f273d2afa257d12f7f848e4f39cce077a21475ee47753fbf82c7d619faf4228",
+      "migrated_sha256": "8108036d433821f0b77c5582ab9d2312a81ea9956ff50ec708d595b3054d70d7",
+      "original_bytes": 6674,
+      "original_executable_ast_sha256": "6f273d2afa257d12f7f848e4f39cce077a21475ee47753fbf82c7d619faf4228",
+      "original_sha256": "caba5ca783a585acbfdff38b4aead49674edbd714246bc75a47531d000c2d80e",
+      "reason": "Presentation-only source cleanup; executable AST unchanged."
+    },
+    "tests/test_render.py": {
+      "classification": "comments-and-docstrings",
+      "migrated_bytes": 6935,
+      "migrated_executable_ast_sha256": "a0da5d908b1ca425d0a0c01784f986ff21c9999b1772e59d234c7f55340479aa",
+      "migrated_sha256": "d81fa759c5cf8bd55f6e5c3189360a8e4659577b54a0e76a1f338a7e43e91ebf",
+      "original_bytes": 6936,
+      "original_executable_ast_sha256": "a0da5d908b1ca425d0a0c01784f986ff21c9999b1772e59d234c7f55340479aa",
+      "original_sha256": "81b707d28955007373640984f0a12005079ec64d00e58818fa21717404949bae",
+      "reason": "Presentation-only source cleanup; executable AST unchanged."
+    },
+    "tests/test_trpo_application.py": {
+      "classification": "validation",
+      "migrated_bytes": 10106,
+      "migrated_executable_ast_sha256": "4b52930766dc6e0e8c56c36b9f25dad69e114eee9bfc6a05afdfcb7237604a57",
+      "migrated_sha256": "3928404ca214bcd0d5bcd79ec55fd1a8c71d65ef93ff385ed540382534bbed0f",
+      "original_bytes": 6760,
+      "original_executable_ast_sha256": "b02a5423628f56fd84a303a9668fb90051752451fdcec7bd202f9e0ce17e03d0",
+      "original_sha256": "3903bf5b5f5e19a1688f15d2da318fe93a3db6567d9ecfd34fc5dfad58a025c2",
+      "reason": "Migration and regression test integration."
+    },
+    "tools/build_deploy_bundle.py": {
+      "classification": "migration-tooling",
+      "migrated_bytes": 4003,
+      "migrated_executable_ast_sha256": "1ad6e0b41edbce682085a27088e00a5fb6605bae38831e7d03271a0195507c84",
+      "migrated_sha256": "d50108af8ce0cde9d15352c62a672f0e40ac1c6d8b55541c4281a87b8d898a45",
+      "original_bytes": 3873,
+      "original_executable_ast_sha256": "c2baf2c8a99d72db9d98977c5ce89c15598daeeff575c6e5f68348afd75c2eaa",
+      "original_sha256": "dd096658b9f963500cc00c1f574d001fbb86e30d19d9a36aab86e051deda6155",
+      "reason": "Reviewed local migration tooling and presentation integration."
+    },
+    "tools/export_replay_html.py": {
+      "classification": "migration-tooling",
+      "migrated_bytes": 2692,
+      "migrated_executable_ast_sha256": "460fc0b69ec429e485194d85f6e2fdf57e1b26682462c52776c8f7fa14e25231",
+      "migrated_sha256": "1ca350402dc3e19f4d0aba5d7cca1484bd0b0cf2925a89d3ac232c8a444d6239",
+      "original_bytes": 2694,
+      "original_executable_ast_sha256": "8f191893ae2f1e8e9f559fe37ce48e0d4df2eeaafb6becf84d2a22ec75bb2b58",
+      "original_sha256": "da07f5aadec6979be6d540361ba86b23dffdc4f42e10ababcfc762494e79f9e3",
+      "reason": "Reviewed local migration tooling and presentation integration."
+    },
+    "tools/preview_motifs.py": {
+      "classification": "migration-tooling",
+      "migrated_bytes": 6260,
+      "migrated_executable_ast_sha256": "70bf461f5ad3df433b7b2d474a3f275b0b20fc1ecdf670e61bb74589a75305ae",
+      "migrated_sha256": "015aa0d22dddfd547e39c16acd3b470f9a07afdcf0c207fb03414ff02266e8d2",
+      "original_bytes": 6286,
+      "original_executable_ast_sha256": "e3ac5ccf8fea30a4740829bdabf1f96038e830c4a6c149c08046a93eda9c5e17",
+      "original_sha256": "f2d123c72990cf7cc8dbbca6472292a20e1f18c57101a174725ac68f7e47db0a",
+      "reason": "Reviewed local migration tooling and presentation integration."
+    },
+    "tools/render_demo.py": {
+      "classification": "migration-tooling",
+      "migrated_bytes": 2574,
+      "migrated_executable_ast_sha256": "63225b0d1e529d541da4cc62882a55233835578df0d8ced625b1315fad3cfad5",
+      "migrated_sha256": "dcb28d7addd0b0aa1eda15a8090b0ef08de0e54a0aa2796f2ea9fc242ed35a56",
+      "original_bytes": 2578,
+      "original_executable_ast_sha256": "04368d1bf9d19b9ffd29340f363f731106c77de7089ca926988f1f71bcdf77a2",
+      "original_sha256": "4ff78bc3d886929794607748cb3da703509619422faef4e7f50e4e157f1c34e0",
+      "reason": "Reviewed local migration tooling and presentation integration."
+    },
+    "tools/sync_prototype.py": {
+      "classification": "migration-tooling",
+      "migrated_bytes": 6121,
+      "migrated_executable_ast_sha256": "0f6ee595ebe3fd7d4573bf11cabe275933e1eda59ebad9f6808719d6bf534b28",
+      "migrated_sha256": "bbd0440187b749872a1902fe9a8036dfcd7aebbf50012bfc410b675ba49081b3",
+      "original_bytes": 6127,
+      "original_executable_ast_sha256": "5e4deb2ea59888a634ec31a19aca54f201551d4255604e2cd526047e25fafd9d",
+      "original_sha256": "1ab956e918da3d483ef3655fc61c786a92df89e8cc1d18da061732f9f7f4a3a1",
+      "reason": "Reviewed local migration tooling and presentation integration."
+    },
+    "train/evaluate.py": {
+      "classification": "compatibility-validation",
+      "migrated_bytes": 12611,
+      "migrated_executable_ast_sha256": "271ea1053c44ef99f16893da0940846059665fadf1759249e3478902c0d078c3",
+      "migrated_sha256": "1fe30d99c756ddb7c43686ca316fe82b9cca924c45246bfd3742a45d7f52d73b",
+      "original_bytes": 12462,
+      "original_executable_ast_sha256": "7c61ae78369e8885fc35f821abf88a3ff12eb16ecf7b052781998d7235a9d0fb",
+      "original_sha256": "588182bae455ae9407511bd0d6768e38e14624c4360f1b91847bc12a1028565f",
+      "reason": "Recognize only the pinned source migration; model, input, runtime and historical-record checks remain strict."
+    },
+    "train/train_ppo.py": {
+      "classification": "compatibility-validation",
+      "migrated_bytes": 23424,
+      "migrated_executable_ast_sha256": "2795bbfa22fa50c6b4fc2210004a62b30527e162aeb49b08aadc1ff27fd77d25",
+      "migrated_sha256": "d1eadfe7d4047bc7d7bfa899a289b445abff98a60ce226ea0f6b6af08f2840d1",
+      "original_bytes": 23252,
+      "original_executable_ast_sha256": "2f04d751d48175d5387d5c3d5fbf897b72b66cd171309bcd377d50abe27ef759",
+      "original_sha256": "56ce5e1feadff16b8d2dbd0c3b80e7387e0e633cd7c31cbb14efd700626b946a",
+      "reason": "Recognize only the pinned source migration; model, input, runtime and historical-record checks remain strict."
+    },
+    "trpo/config.py": {
+      "classification": "comments-and-docstrings",
+      "migrated_bytes": 2689,
+      "migrated_executable_ast_sha256": "d39b03f46119f216df0bd002d44401692ae54c1cc21e953bcf7479cd7d7b3fb8",
+      "migrated_sha256": "4212f4b5bc261fb3795adaab45ccf1489a97fea0ed81636032b920dd4469ddea",
+      "original_bytes": 2752,
+      "original_executable_ast_sha256": "d39b03f46119f216df0bd002d44401692ae54c1cc21e953bcf7479cd7d7b3fb8",
+      "original_sha256": "048bc42a0d5392714bb3f8f20f12be0899e91ff27130281cd489b2398caafaea",
+      "reason": "Presentation-only source cleanup; executable AST unchanged."
+    },
+    "trpo/runner.py": {
+      "classification": "comments-and-docstrings",
+      "migrated_bytes": 17597,
+      "migrated_executable_ast_sha256": "2885f0a50da79aec4ad8e66bc8a52813d906f6db9f825c9297853293f371cbdb",
+      "migrated_sha256": "ecbe12cb92e5df29f37835b3839b47034dac1429be247d6cdcc6789a2cee861f",
+      "original_bytes": 17619,
+      "original_executable_ast_sha256": "2885f0a50da79aec4ad8e66bc8a52813d906f6db9f825c9297853293f371cbdb",
+      "original_sha256": "300670b7ec725dc301661d596bbf435b1abe1f7a76a36dbb9135a924d8ebae3a",
+      "reason": "Presentation-only source cleanup; executable AST unchanged."
+    },
+    "ui/app.py": {
+      "classification": "application-integration",
+      "migrated_bytes": 23640,
+      "migrated_executable_ast_sha256": "8069644303e362833c6076babcedd3151032b43c82d8ad49e4bc0f73ffdadc91",
+      "migrated_sha256": "6dc500bff8d562bd6cdae754280f541d14aa1332c51b2c94daaa4cf7e7429799",
+      "original_bytes": 22891,
+      "original_executable_ast_sha256": "1cf10d51c64cfa82f923f39d9e0312813f2f664d2c7494b11c984350ad3645a1",
+      "original_sha256": "fcaa1c1b5cea6ccd7b0cba0fcae4fba2b32a5fe0d6aa43b5a262af231d61a4bd",
+      "reason": "Reviewed application integration preserving recorded model identities."
+    },
+    "ui/policy_playback.py": {
+      "classification": "compatibility-validation",
+      "migrated_bytes": 7340,
+      "migrated_executable_ast_sha256": "961439768534d9a36d4cb29c21ac18c74bee4072a57530afc5c2accef45d948d",
+      "migrated_sha256": "4196e7f90512fe5618336663ac7c8857b2df9ad7c66a26c722e6b6d4d89fce1c",
+      "original_bytes": 7074,
+      "original_executable_ast_sha256": "ebb492b2afee4a15e3481ea00a904505c1b4fd9a377bb075e19f8387c3adf3c0",
+      "original_sha256": "3bff211936bb2b261262e85b87bf3c3831f047918e87804d8a17de8f9ee3860c",
+      "reason": "Recognize only the pinned source migration; model, input, runtime and historical-record checks remain strict."
+    },
+    "ui/trpo_models.py": {
+      "classification": "application-integration",
+      "migrated_bytes": 6755,
+      "migrated_executable_ast_sha256": "71c6024378d248b8b167d54032d3f9f6cc545037cb34063023f7abe4364a31e7",
+      "migrated_sha256": "957a52378f51c51397416aeedf6c4132c363ce10d6539256ff5211d8490cc74c",
+      "original_bytes": 4017,
+      "original_executable_ast_sha256": "aa6b2eddc67ec17bbfc2059cdbe0d92773dc7361ef4820932cddad82734cd4cb",
+      "original_sha256": "3745057b6661867769b8d2902df47c806f609e6cfe7dc808a142b9f4ce3b1173",
+      "reason": "Reviewed application integration preserving recorded model identities."
+    },
+    "ui/v2_models.py": {
+      "classification": "compatibility-validation",
+      "migrated_bytes": 4974,
+      "migrated_executable_ast_sha256": "0cb2a64048bd36cd20e9732edb482479b3dcdd01ce68ea0aa498dcb6519903c9",
+      "migrated_sha256": "c07bc91c3157628e19793cbac3b92e468643245f91e8a7ea615968f22677fbb8",
+      "original_bytes": 4894,
+      "original_executable_ast_sha256": "fee8ec9a1654e453f13471f318c424af111e3a512e5bb9f4bf6d39d999ad8148",
+      "original_sha256": "c9f63a4f63365db9bf5e10df7382fd6f44b4427e1ea3ba050d9e93a26bcefb6b",
+      "reason": "Recognize only the pinned source migration; model, input, runtime and historical-record checks remain strict."
+    },
+    "v2_cohort_evaluation/runner.py": {
+      "classification": "compatibility-validation",
+      "migrated_bytes": 16690,
+      "migrated_executable_ast_sha256": "07b71f7c7bc2a7732b2cd42a4d4afaef5eb04d5e5016ece3beff4ed63837edee",
+      "migrated_sha256": "b14c37c73d0e9e740053de5a8368bae7fde743c90da8af926c7cd542217ee101",
+      "original_bytes": 16065,
+      "original_executable_ast_sha256": "0f92735b098c05356f936138af6f8f16f7cda80ea034df0036a474361fc84e22",
+      "original_sha256": "ba5d778a6421e0b58763b49a30832a22b96cd48684944d3b14911f3caf796ec2",
+      "reason": "Recognize only the pinned source migration; model, input, runtime and historical-record checks remain strict."
+    },
+    "v2_cohort_evaluation/tests/test_cohort.py": {
+      "classification": "validation",
+      "migrated_bytes": 11844,
+      "migrated_executable_ast_sha256": "3eadd3f858a53b8e6ccecd546ff1ffda4f40312d7cc64bda69d8b98b838b038c",
+      "migrated_sha256": "74ba5f05ad5843b4aba44fe0c49e1e3260112c6dd4ddea2c1eaee037807a8ef3",
+      "original_bytes": 11572,
+      "original_executable_ast_sha256": "7d75eac02253a827a477fd9e10369d404e34e6107f1edb6dba356cf3fbdfaee6",
+      "original_sha256": "e252565bcb8fe334fdfff8333e522999a9769ef896e171d4e7df31c3e3f72220",
+      "reason": "Migration and regression test integration."
+    },
+    "v2_development/runner.py": {
+      "classification": "compatibility-validation",
+      "migrated_bytes": 16631,
+      "migrated_executable_ast_sha256": "fae00e1700d7046a7196bc97d21813ada9c4aaff022d375d15d6594486e8d21a",
+      "migrated_sha256": "193d26d77cfdf0e096476df54a9497b7093fc7e0f7aaeae4421142133182d747",
+      "original_bytes": 15350,
+      "original_executable_ast_sha256": "6f3ae2c799d55cb4d919b9263819f58c16ba6ba5e6c37aa3b5e44976f9bf7da2",
+      "original_sha256": "10ca7343a85d80c9d1c2a34d3ac89ad1179cb4697212f26d704d71caf76e457e",
+      "reason": "Recognize only the pinned source migration; model, input, runtime and historical-record checks remain strict."
+    },
+    "v2_final/runner.py": {
+      "classification": "compatibility-validation",
+      "migrated_bytes": 20566,
+      "migrated_executable_ast_sha256": "7f8ed34f9c9ccb517469f39600f813193e131042355fd84eea82c36ff68b0c2a",
+      "migrated_sha256": "fa810d04fff89c3d2b9b569ab3deb92710dcc090f555f02dcfbd5408e86ca67a",
+      "original_bytes": 20155,
+      "original_executable_ast_sha256": "de667c2a997ab7edf860f29e50139d2499be89de5521a1e73348a2a6850a0eae",
+      "original_sha256": "0529e9e7c072b28ac3a03b17f82f45731a48c4778b0d282e56facf5d4573910d",
+      "reason": "Recognize only the pinned source migration; model, input, runtime and historical-record checks remain strict."
+    },
+    "v2_phases/runner.py": {
+      "classification": "compatibility-validation",
+      "migrated_bytes": 17019,
+      "migrated_executable_ast_sha256": "0345e0f25b32ccdea25d0b66dfdd0e0aa605031c81177791e672e0140dcc1dc4",
+      "migrated_sha256": "15ce32a7bbeefb0ea7a9e1904f6fc572bf7dd3fc8e347cc0709e21e1a86abc92",
+      "original_bytes": 16992,
+      "original_executable_ast_sha256": "c04ade716ca455272529a99568a5ee0b5d9fc26781eadc29fa2229f9e5d458f2",
+      "original_sha256": "706e440fa3e44df9402dd417a5261c07d17221f1c5da32852d7db824620247b5",
+      "reason": "Recognize only the pinned source migration; model, input, runtime and historical-record checks remain strict."
+    },
+    "v2_replays/runner.py": {
+      "classification": "compatibility-validation",
+      "migrated_bytes": 16947,
+      "migrated_executable_ast_sha256": "e4dfd647d3d6ae651e968e7cd6ee7b2c2ded77ace9d98245393fb65f058ec857",
+      "migrated_sha256": "4a064a2b24a189fcafd257fc2abf31ec96dd8ad32f5c651ecd808058ff2af7f6",
+      "original_bytes": 16908,
+      "original_executable_ast_sha256": "a7a43a75db7e87f850cf792d780dca4266384bae92eb18c6e63ba0c07c33ea07",
+      "original_sha256": "beec6fd028090e8c61b030ac0a5e91e70699dab8e991b2e1557ced306115f868",
+      "reason": "Recognize only the pinned source migration; model, input, runtime and historical-record checks remain strict."
+    },
+    "v2_replication/protocol.py": {
+      "classification": "compatibility-validation",
+      "migrated_bytes": 3845,
+      "migrated_executable_ast_sha256": "a83a96f793d212b0cfce6eb6c27afa8ccb9d9bf870bac87ac89fb4f16a216c5b",
+      "migrated_sha256": "92c67c991f53418706841765df646956c75b881bdfc94f5a57befd408337254c",
+      "original_bytes": 3674,
+      "original_executable_ast_sha256": "ad7f8e4f4ea67b31ec2813bd0c3c194433a59689dfde5258ae4c0fc21b153c9d",
+      "original_sha256": "71ba3cbaf1b06ea7b1e1383c9b2be78ba0993a22665e4940cd4c6f188f7a3104",
+      "reason": "Recognize only the pinned source migration; model, input, runtime and historical-record checks remain strict."
+    },
+    "v2_replication/runner.py": {
+      "classification": "compatibility-validation",
+      "migrated_bytes": 17125,
+      "migrated_executable_ast_sha256": "2328b68622e9b19dc82ad0995a8f5e67b16b1503a3d1d5cb3c33ef7f33576bbe",
+      "migrated_sha256": "da5c5a573fffdcf62e1612d00c34d5f74cc3bb54af6341df42a5b334028e93c4",
+      "original_bytes": 16919,
+      "original_executable_ast_sha256": "acd7e444382113d8e83b45ef700d24e0e2a098b0ccfa06d595c6c5a81352e176",
+      "original_sha256": "d869d3ba39fe0edfd30c2622dff10bb531d9e646c71226922f0ea849006ed76c",
+      "reason": "Recognize only the pinned source migration; model, input, runtime and historical-record checks remain strict."
+    },
+    "v3_final/runner.py": {
+      "classification": "comments-and-docstrings",
+      "migrated_bytes": 17375,
+      "migrated_executable_ast_sha256": "6c7882a057d31b6e63af0d71f61fe625dcd6dd0829f3a2b422453b1e9cb9b211",
+      "migrated_sha256": "8b5a1f3bcb79021b7d8e92d3e7e1154e27bb59e2edbd1c557912ace22dc28a13",
+      "original_bytes": 17299,
+      "original_executable_ast_sha256": "6c7882a057d31b6e63af0d71f61fe625dcd6dd0829f3a2b422453b1e9cb9b211",
+      "original_sha256": "b6cab338be076309de16e7fa81d23aa13a1cb896288fdd44deba2233f293f753",
+      "reason": "Presentation-only source cleanup; executable AST unchanged."
+    },
+    "version2/protocol.py": {
+      "classification": "compatibility-validation",
+      "migrated_bytes": 2416,
+      "migrated_executable_ast_sha256": "b354f0455ac4e947865440b1625de97f605d8e9d1a02fb0ea52fd6824be22f20",
+      "migrated_sha256": "7ff57c0635432d95b5dfe270233bd461aeb097d2a4cf19e1081bc7d48c650193",
+      "original_bytes": 2268,
+      "original_executable_ast_sha256": "0e2af6ad41bdc87998bd2754963bdd8cd95ba0a2d37526a9e5455d41e1be3b40",
+      "original_sha256": "6a4586fe3fdd5d2dcb3cf1a632e01171fe05fc3c91edab2da045358cc71cc49a",
+      "reason": "Recognize only the pinned source migration; model, input, runtime and historical-record checks remain strict."
+    },
+    "version2/runner.py": {
+      "classification": "compatibility-validation",
+      "migrated_bytes": 16434,
+      "migrated_executable_ast_sha256": "3708ad5d882c8c014ef8417bb08fd1517c95f6883d3f4aa6a29d5cd460ad3e40",
+      "migrated_sha256": "297d72a714a793806fe49dddf347cc331173934819baa4d7bf521d34acfedbd2",
+      "original_bytes": 16257,
+      "original_executable_ast_sha256": "b6ad0152836114a0ddd3d36286db1bffed6a7f3a9a15c635a956e7fa1de56750",
+      "original_sha256": "b37f3f1b1963d128ad5cceccbbd3ff3877750406a7ed2221915cbf9cd8030cb7",
+      "reason": "Recognize only the pinned source migration; model, input, runtime and historical-record checks remain strict."
+    },
+    "watch_trained_agent.py": {
+      "classification": "compatibility-validation",
+      "migrated_bytes": 7482,
+      "migrated_executable_ast_sha256": "51aaca9a3b94f0bd3995716498b37a25b2722f59a2db54c52f45e22152d90e4d",
+      "migrated_sha256": "f977d96691ea06deff1dbdebb0e3e7e5bd409e3904efdbd4cfe2c911281ea8f7",
+      "original_bytes": 7240,
+      "original_executable_ast_sha256": "5249e2cb443cc2f605097a8508626c3a393219677789c7333d333bbe0a3822ce",
+      "original_sha256": "7a5318ed973cbfe4e2cc75ceeaf5f5c3979351ca1e72ecb7b19d9c1968219a43",
+      "reason": "Recognize only the pinned source migration; model, input, runtime and historical-record checks remain strict."
+    }
+  },
+  "policy": "Only the recorded forward Python source pairs are accepted. Actual hashes are always reported. Configuration JSON remains byte-exact. Unrecognized changes fail closed.",
+  "schema": 1,
+  "scope": "Local submission migration; no historical models, manifests, protocols, registries, pools, logs or results are rewritten.",
+  "upstream_commit": "68755c84cdaeae0698a3b9d764b9c4c0bc6da7e0",
+  "upstream_repository": "https://github.com/vaibhavbai1/base-siege"
+}
