@@ -1,62 +1,87 @@
-# Base Siege: foundation and masked TRPO
+# Base Siege
 
-This is the first of three submission migration stages. It contains the shared
-simulator, random and heuristic commanders, Gymnasium interface, reusable training
-foundation, masked TRPO implementation, development monitor, fixed training and
-development pools, dependency files, focused tests and canonical TRPO evidence.
+Base Siege studies army selection and troop deployment in a custom reinforcement
+learning environment. This repository currently contains the simulator, baseline
+commanders, shared training infrastructure, masked TRPO implementation and
+preserved TRPO experiment evidence.
 
-Chandan leads review and migration of this stage, including his TRPO contribution.
-The shared foundation retains its existing source provenance. This package does
-not assign sole authorship of shared code.
+Developed for 43008 Reinforcement Learning at the University of Technology Sydney
+by Chandan, Sreekar and Vaibhav. Chandan contributed the TRPO implementation. Shared
+source and recorded experiments retain their original provenance from
+[Vaibhav's repository](https://github.com/vaibhavbai1/base-siege), commit `68755c84`.
 
-## Set up and check
+## Setup
 
-Use Python 3.12 and uv. Open a terminal in this folder, then run:
+Use Python 3.12, [uv](https://docs.astral.sh/uv/) and Git LFS. Clone without
+automatically downloading research models and logs:
 
 ```bash
+git lfs install
+GIT_LFS_SKIP_SMUDGE=1 git clone https://github.com/Reinforcement-Learning-UTS/base-siege-dihedrals.git
+cd base-siege-dihedrals
 uv sync --frozen --python 3.12
+```
+
+Run these commands from the repository root, beside `pyproject.toml`:
+
+```bash
 uv run --frozen python -m pytest tests trpo/tests -q
 uv run --frozen python -m trpo.runner --help
 ```
 
-The tests include short synthetic CPU learning checks. They verify implementation
-behaviour; they do not reproduce the completed scientific studies. The CLI help
-checks that the training entrypoint imports without starting a training run.
+The checks run short CPU examples and import the training entrypoint. They do not
+start a full experiment or require the supplied model binaries.
 
-## Contents and evidence
+## Repository structure
 
-- `env/`, `agents/`, `train/` and `experiments/`: shared scientific foundation.
-- `trpo/`: mask-aware TRPO, training entrypoint, checkpoint retention and tests.
-- `version2/evaluation.py`: the development monitor required by TRPO training.
-- `bases/train-v2.json` and `bases/dev-v2.json`: preserved fixed pool inputs.
-- `provenance/`: pinned original-to-migrated source compatibility records.
-- `tests/`: focused simulator, RL-contract and experiment-safeguard checks.
-- `runs/study-v3/` and `runs/trpo-pilot-100/`: final and placement model references,
-  training episode/TensorBoard log references, development histories and metadata.
-- `artifacts/version3-final-evaluation/`, `artifacts/version3-mode-probe/` and
-  `artifacts/trpo/selected-T1/`: completed results, frozen identities and selected
-  model references.
-- `docs/migration/stage1-trpo-evidence.json`: original file hashes and sizes,
-  included evidence and the full inventory deferred to later archive migration.
+| Path | Contents |
+|---|---|
+| `env/` | Simulator, legal actions, combat, rendering and symmetry |
+| `agents/` | Random and heuristic baseline commanders |
+| `train/`, `experiments/` | Shared policy, rollout, experiment and recovery infrastructure |
+| `trpo/` | Masked TRPO, training entrypoint, retention and tests |
+| `version2/evaluation.py` | Development monitor used by TRPO training |
+| `bases/` | Preserved training and development pools |
+| `runs/`, `artifacts/` | Canonical TRPO model references, histories and completed results |
+| `provenance/` | Pinned original-to-migrated source compatibility records |
+| `tests/` | Simulator, RL contract and experiment checks |
+| `docs/migration/` | Evidence inventory and preservation records |
 
-The migration preserves the recorded scientific inputs and model-related module
-names. Source compatibility records explain reviewed source changes while keeping
-real file hashes truthful.
+## Models and experiment evidence
 
-The evidence contains 124 canonical files representing 227,250,749 original bytes.
-Of these, 63 large-file paths contain their original Git LFS pointers. Their real
-model/log bytes are not included in this ZIP. The other 61 evidence files contain
-the actual metadata and completed results. Model and log loading require later
-central LFS upload and hydration against the approved hash inventory.
+The current evidence inventory contains 124 canonical TRPO files, representing
+227,250,749 original bytes. Sixty-three paths use Git LFS pointers for 62 distinct
+objects; the other files contain the actual metadata and completed results.
+All required objects are uploaded and verified in this repository's LFS store.
 
-The preserved original workspace retains another 1,256 intermediate/recovery and
-journal files, plus three duplicate ZIP exports. Those are inventoried for later
-archive migration rather than included here. No original evidence was deleted.
-Inference models are not a replacement for complete training recovery state.
+Download the ten final TRPO model files only when needed:
 
-The remaining PPO/DDQN workflows, full V2/V3 execution packages, model catalogs
-and application arrive in later migration stages. This first stage has no web
-application. Do not push the pointer commit until the team has verified that the
-required LFS objects are available at the destination repository.
+```bash
+git lfs pull --include="runs/study-v3/*/model.zip"
+```
 
-Read the separate instructions supplied beside the ZIP before repository upload.
+The corresponding run directories retain placement models, episode and
+TensorBoard histories, development records and manifests. Completed evaluations
+are under `artifacts/version3-final-evaluation/` and
+`artifacts/version3-mode-probe/`. Selected-model evidence is under
+`artifacts/trpo/selected-T1/`.
+
+The [TRPO evidence inventory](docs/migration/stage1-trpo-evidence.json) records
+original paths, sizes and hashes. Its publication-status field describes package
+preparation before the central LFS upload. The objects are now available.
+Another 1,256 recovery/intermediate records and three duplicate exports remain
+preserved in the source workspace for later research-archive migration.
+
+Scientific inputs, model identities and output bytes are preserved. Reviewed
+source cleanup is recorded explicitly in `provenance/`; training checkpoints and
+historical results are not rewritten to accommodate cleanup.
+
+## Migration status
+
+The foundation and TRPO stage is present. Remaining PPO/DDQN workflows, V2/V3
+research packages, catalogs, results and report tooling arrive in the next stage.
+The complete Streamlit application and hosted release follow separately.
+
+This stage has no web application. The two original contribution commits remain
+in the repository history; the layout correction places the project directly at
+the root so setup commands, imports and later packages use the same paths.
