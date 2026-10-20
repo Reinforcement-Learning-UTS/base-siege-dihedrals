@@ -5,7 +5,7 @@ freeze marker stands; this generates a new pool on a disjoint seed interval and
 evaluates all three conditions plus the heuristic baseline under one frozen protocol.
 
 The shared simulator configuration and learned weights are unchanged. The
-reviewed source migration records source cleanup and compatibility checks while
+reviewed source compatibility records source cleanup and compatibility checks while
 preserving the original registries, experiment manifests, and result hashes.
 
     python -m v3_final freeze

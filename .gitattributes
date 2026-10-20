@@ -18,8 +18,7 @@ runs/trpo-*/**/*.jsonl filter=lfs diff=lfs merge=lfs -text
 runs/** -text
 artifacts/** -text
 bases/** -text
-reference/** -text
-# Source migration and frozen protocols use byte-level identities.
+# Source compatibility and frozen protocols use byte-level identities.
 *.py -text
 *.json -text
 *.jsonl -text

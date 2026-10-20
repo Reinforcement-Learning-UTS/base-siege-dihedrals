@@ -9,9 +9,9 @@ The final collection contains 51 unique checkpoints totalling 212,250,251 bytes 
 | TRPO | T-0 to T-9 | 19,275,004 |
 | Selected DDQN | Seed 100, step 2,097,152 | 1,429,997 |
 
-`docs/migration/final-models.json` records paths, hashes, sizes and learner identities. V1 models are under the historical name `runs/study-v2/`; their manifests record 262,144 transitions. V2 endpoints have 4,194,304 transitions. Some registered screening endpoints are milestone files, so substituting nearby recovery checkpoints is invalid.
+`models/catalog.json` records paths, hashes, sizes and learner identities. V1 models are under the historical name `runs/study-v2/`; their manifests record 262,144 transitions. V2 endpoints have 4,194,304 transitions. Some registered screening endpoints are milestone files, so substituting nearby recovery checkpoints is invalid.
 
-Models use Git LFS. All 2,832 reviewed baseline objects are uploaded and available in the organisation repository. All 51 final models were downloaded and hash-verified on 20 October 2026. Source ZIPs carry the original pointer files; contributors do not need to upload binary payloads again. Fetch only the model paths needed for a check rather than the full research archive.
+Models use Git LFS. All 2,832 reviewed baseline objects are uploaded and available in the organisation repository. All 51 final models were downloaded and hash-verified on 20 October 2026. The checkout retains the original model identities. Fetch only the model paths needed for a check rather than the full research archive.
 
 Inference needs weights, matching architecture/simulator, sidecars and a compatible runtime. Repeating evaluation also requires all included learners, frozen pools, acting schemes and evaluator code. Exact training recovery additionally needs optimizer, RNG, environment state and recovery journals.
 

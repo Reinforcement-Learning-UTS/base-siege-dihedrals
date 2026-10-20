@@ -146,11 +146,11 @@ then compares resumed training against uninterrupted training.
 """),
 ("code", '''
 required = ["env/siege_env.py", "train/checkpoints.py", "train/train_ppo.py",
-            "experiments/protocol.py", "uv.lock", "reference/base_siege_stage5_sync.zip"]
+            "experiments/protocol.py", "uv.lock", "models/catalog.json"]
 inventory = pd.DataFrame({"file": required, "present": [(ROOT / p).is_file() for p in required]})
 display(inventory)
 assert inventory.present.all()
-print("Original ZIP SHA-256:", sha256(ROOT / required[-1]))
+print("Model catalog SHA-256:", sha256(ROOT / required[-1]))
 '''),
 ("md", """## 4. Understand the units
 

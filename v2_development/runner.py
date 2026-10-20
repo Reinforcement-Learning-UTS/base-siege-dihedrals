@@ -88,7 +88,7 @@ def verify_files(root, expected):
 
 
 def runtime_matches(recorded, current):
-    """Allow the pinned source migration while keeping every other field exact."""
+    """Allow the pinned source compatibility while keeping every other field exact."""
     return (recorded.keys() == current.keys()
             and all(source_tables_match(recorded[key], current[key]) if key == 'source_hashes'
                     else recorded[key] == current[key] for key in recorded))

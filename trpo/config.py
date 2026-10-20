@@ -2,7 +2,7 @@
 
 Settings stay separate from env/config.py so the simulator configuration
 remains unchanged. The checkpoint checks verify either exact original source
-or the explicitly pinned source migration. Shared constants are imported below.
+or the explicitly pinned source compatibility. Shared constants are imported below.
 """
 from env import config as C
 

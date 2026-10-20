@@ -1,37 +1,26 @@
 # Documentation
 
-Start with the [project README](../README.md), [models](MODELS.md),
-[results](RESULTS.md) and [current migration status](SUBMISSION_STATUS.md).
+Start with the [project overview](../README.md), then choose the guide that fits
+the task.
 
-## Research guides
+| Guide | Purpose |
+|---|---|
+| [Architecture](ARCHITECTURE.md) | Simulator, decisions, policies, recovery and evaluation |
+| [Models](MODELS.md) | All 51 checkpoints, learner seeds and runtime requirements |
+| [Results](RESULTS.md) | Canonical evidence, interpretation and report figures |
+| [Runbook](RUNBOOK.md) | Research commands and safeguards |
+| [Deployment](DEPLOYMENT.md) | CPU app, standalone bundle and Streamlit settings |
+| [SageMaker Studio](SAGEMAKER_STUDIO.md) | Long-running training and recovery workflow |
 
-- [Architecture](ARCHITECTURE.md)
-- [Research runbook](RUNBOOK.md)
-- [Experiment plan](EXPERIMENT_PLAN.md)
-- [Scientific decisions](DECISIONS.md)
-- [TRPO interface](TRPO_INTERFACE.md)
-- [TRPO evidence import](TRPO_IMPORT.md)
+## Experiment handbooks
 
-The architecture and research runbook also describe the intended complete project.
-Application entrypoints and hosted deployment arrive in the following stage.
-
-## Original handbooks
-
-The three supplied documents remain byte-identical historical references. Their
-prose does not override frozen protocols, completion records or output hashes.
+These supplied documents are preserved historical references. Frozen protocols,
+completion records and output hashes take precedence over descriptive summaries.
 
 - [PPO V1](Base_Siege_Complete_Experiment_Handbook.docx)
-- [PPO V1/V2](Base_Siege_Complete_Experiment_Handbook_V1_V2.docx)
-- [DDQN/TRPO](Base_Siege_DDQN_TRPO_Complete_Experiment_Handbook.docx)
+- [PPO V1 and V2](Base_Siege_Complete_Experiment_Handbook_V1_V2.docx)
+- [DDQN and TRPO](Base_Siege_DDQN_TRPO_Complete_Experiment_Handbook.docx)
 
-## Preservation records
-
-- [Final model identities](migration/final-models.json)
-- [First-stage TRPO inventory](migration/stage1-trpo-evidence.json)
-- [Research migration inventory](migration/stage2-research-inventory.json)
-- [Original-to-reference relocations](migration/relocations.json)
-
-The first-stage inventory's publication field describes its pre-upload snapshot.
-The central LFS upload and final-model readback have since passed. Earlier source,
-console logs, application copies and handoffs remain under `reference/`; they are
-historical evidence rather than active entrypoints.
+The machine-readable [model catalog](../models/catalog.json) records final weight
+paths, hashes, sizes and learner identities. The pinned records in `provenance/`
+recognise exact reviewed source identities without changing scientific evidence.

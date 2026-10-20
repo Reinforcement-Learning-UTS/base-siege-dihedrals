@@ -1,3 +1,3 @@
-"""Integrity pin for the reviewed migration record."""
+"""Independent integrity pin for the reviewed source compatibility record."""
 
-EXPECTED_MIGRATION_SHA256 = 'c9a5c72955d9885bfeafd1c9e1a9a49f2356889212fb18a81853166aeb059595'
+EXPECTED_COMPATIBILITY_SHA256 = '3e918a5cbdc5f9aef0edf4038b392c4cf8bdd2096d3ee9b1e0e4d700dd4bad05'

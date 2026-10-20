@@ -20,7 +20,7 @@ def check():
     from ui.v2_models import label_v2, read_registry
     from ui import ddqn_models, trpo_models
 
-    inventory = json.loads((ROOT / "docs/migration/final-models.json").read_text())
+    inventory = json.loads((ROOT / "models/catalog.json").read_text())
     registry = read_registry()
     targets = {item["path"]: item for item in registry["models"]}
     reports = []

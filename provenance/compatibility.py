@@ -15,9 +15,9 @@ import re
 from collections.abc import Mapping
 from pathlib import Path, PurePosixPath
 
-from provenance._record_pin import EXPECTED_MIGRATION_SHA256
+from provenance._record_pin import EXPECTED_COMPATIBILITY_SHA256
 
-RECORD_PATH = Path(__file__).with_name("source-migration.json")
+RECORD_PATH = Path(__file__).with_name("source-compatibility.json")
 UPSTREAM_COMMIT = "68755c84cdaeae0698a3b9d764b9c4c0bc6da7e0"
 _DIGEST = re.compile(r"[0-9a-f]{64}\Z")
 
@@ -46,10 +46,10 @@ def _record() -> dict:
     """Read and verify every time so an in-process edit cannot use a cached map."""
     payload = RECORD_PATH.read_bytes()
     actual = hashlib.sha256(payload).hexdigest()
-    if not _digest(EXPECTED_MIGRATION_SHA256) or not hmac.compare_digest(
-        actual, EXPECTED_MIGRATION_SHA256
+    if not _digest(EXPECTED_COMPATIBILITY_SHA256) or not hmac.compare_digest(
+        actual, EXPECTED_COMPATIBILITY_SHA256
     ):
-        raise ValueError("Source migration record integrity check failed")
+        raise ValueError("Source compatibility record integrity check failed")
     record = json.loads(payload)
     if (
         not isinstance(record, dict)
@@ -57,16 +57,16 @@ def _record() -> dict:
         or record.get("upstream_commit") != UPSTREAM_COMMIT
         or not isinstance(record.get("files"), dict)
     ):
-        raise ValueError("Unsupported source migration record")
+        raise ValueError("Unsupported source compatibility record")
     for name, entry in record["files"].items():
         if (
             not _source_name(name)
             or not isinstance(entry, dict)
             or not _digest(entry.get("original_sha256"))
-            or not _digest(entry.get("migrated_sha256"))
+            or not _digest(entry.get("reviewed_sha256"))
             or not isinstance(entry.get("classification"), str)
         ):
-            raise ValueError("Invalid source migration entry")
+            raise ValueError("Invalid source compatibility entry")
     return record["files"]
 
 
@@ -74,7 +74,7 @@ def _matches(name: str, expected: str, actual: str, entries: dict) -> bool:
     if not (_relative_name(name) and _digest(expected) and _digest(actual)):
         return False
     # Some recorded source tables also include unchanged plan/config JSON.
-    # Such entries retain exact comparison and can never use a migrated pair.
+    # Such entries retain exact comparison and can never use a reviewed pair.
     if PurePosixPath(name).suffix not in (".py", ".json"):
         return False
     if hmac.compare_digest(expected, actual):
@@ -85,7 +85,7 @@ def _matches(name: str, expected: str, actual: str, entries: dict) -> bool:
     return bool(
         entry
         and hmac.compare_digest(expected, entry["original_sha256"])
-        and hmac.compare_digest(actual, entry["migrated_sha256"])
+        and hmac.compare_digest(actual, entry["reviewed_sha256"])
     )
 
 

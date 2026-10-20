@@ -2,7 +2,7 @@
 
 Uses the shared PPO training infrastructure: the same curriculum, pools, and
 checkpoint recovery contract. Original scientific identities are retained by
-the pinned source migration without changing stored checkpoints or manifests.
+the pinned source compatibility without changing stored checkpoints or manifests.
 
     python -m trpo.runner pilot --out runs/trpo-pilot-100 --device cuda
     python -m trpo.runner resume --out runs/trpo-pilot-100

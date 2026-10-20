@@ -25,6 +25,58 @@ def label_v2(manifest, target, registry):
     return result
 
 
+def published_catalog(root=ROOT):
+    """Expose the approved V1/V2 cohort without scanning research checkpoints."""
+    root = Path(root).resolve()
+    inventory_path = root / 'models/catalog.json'
+    if not inventory_path.is_file():
+        return [], ['The final model catalog is missing.']
+    try:
+        inventory = json.loads(inventory_path.read_text())
+        registry = read_registry()
+        v2_targets = {entry['path']: entry for entry in registry['models']}
+        approved = [entry for entry in inventory['models'] if entry['algorithm'] == 'MaskablePPO']
+        identities = {(entry['study'], entry['condition'], entry['learner_seed']) for entry in approved}
+        expected = {(study, condition, seed) for study in ('V1', 'V2')
+                    for condition in ('P', 'PA') for seed in range(10)}
+        if len(approved) != 40 or identities != expected:
+            raise ValueError('Expected the forty approved PPO learners.')
+    except (OSError, KeyError, TypeError, ValueError) as exc:
+        return [], [str(exc)]
+    catalog, issues = [], []
+    for target in approved:
+        try:
+            path, manifest_path = root / target['path'], root / target['manifest_path']
+            for candidate in (path, manifest_path):
+                if (not candidate.resolve().is_relative_to(root) or
+                        any(parent.is_symlink() for parent in (candidate, *candidate.parents))):
+                    raise ValueError('A checkpoint path leaves the application directory.')
+            if path.stat().st_size != target['size']:
+                raise ValueError('Download the approved Git LFS weights before running the app.')
+            if digest(manifest_path) != target['manifest_sha256']:
+                raise ValueError('The original training manifest checksum differs.')
+            manifest = json.loads(manifest_path.read_text())
+            if (manifest['status'] != 'completed' or
+                    manifest['settings']['condition'] != target['condition'] or
+                    manifest['settings']['seed'] != target['learner_seed'] or
+                    manifest['actual_steps'] != target['transitions']):
+                raise ValueError('The checkpoint learner identity differs.')
+            if target['study'] == 'V2':
+                recorded = v2_targets.get(target['path'])
+                if recorded is None or recorded['sha256'] != target['sha256']:
+                    raise ValueError('The V2 checkpoint is not in the frozen registry.')
+                manifest = label_v2(manifest, recorded, registry)
+            else:
+                manifest = {**manifest, 'application_version': 'V1',
+                            'actual_steps': target['transitions']}
+            manifest['model_sha256'] = target['sha256']
+            catalog.append((path, manifest))
+        except (OSError, KeyError, TypeError, ValueError) as exc:
+            issues.append(f"{target['study']} {target['condition']}-{target['learner_seed']}: {exc}")
+    return sorted(catalog, key=lambda item: (item[1]['application_version'] != 'V2',
+                  item[1]['settings']['condition'], item[1]['settings']['seed'])), issues
+
+
 def application_catalog(root, paths, *, public=False):
     """Public mode reads published assets only; local mode adds pinned V2 milestones."""
     from ui.policy_playback import model_catalog

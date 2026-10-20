@@ -22,7 +22,7 @@ CONTRACT_SHA256 = {
     8: '473b0e3c724c37af8b16376961551e1e022c3596de52f5b6912f6977511bd556',
     9: 'bcb2fcc52bfbbfe736c303387abf797cb0ecab6b8a3765a2be72758dfd2dd571',
 }
-# Retain the selected T-1 identities for existing handoff checks.
+# Retain the selected T-1 identities for identity checks.
 CHECKSUMS = {
     'model.zip': '277567ab4491aa3dda8b55d2b52545edc487761573f532103596d2fc0385f876',
     'manifest.json': 'fc57d9860e0e538e8c73014881aa5a8c445d9c4661bd270b001dc6e24cfc33cd',

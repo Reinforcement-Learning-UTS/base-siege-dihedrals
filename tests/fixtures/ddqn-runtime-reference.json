@@ -1,0 +1,10759 @@
+{
+  "schema": 1,
+  "scope": "Generated non-final software parity cases; not a scientific benchmark",
+  "source_commit": "ff36390a7f9756b3153394b1ea20f0bbf049afbb",
+  "source_tree": "0b7599631e184d4b2e023ff8e023c936955b257f",
+  "source_hashes": {
+    "env/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "env/access.py": "794157695a73fe8a355d8b2db4751e794aa5fa126a717f519d75eaab4a8ab77e",
+    "env/combat.py": "2bf73fe3d2a5789f2817c25dadab1018994d46a07de30fe7754d2ddc129aa711",
+    "env/config.py": "57c4cf0c7ea14d2d192dac2aafc4d582dd0e48c987ecb7cccf5b5b8d61d5e4ce",
+    "env/entities.py": "a3076b5a65dca0ce0cb81276c2392d2bae5258e900d276f64f8fbf6064248aed",
+    "env/generator.py": "190beda431286c394eeb5c6ad20d95b9a05ba4564f6a36cd24e125fc9c2ccab9",
+    "env/pathfinding.py": "f0a375ec20e2727b8131c9862fb7ea37363d80ad477cbb90e7b330e1f20d016e",
+    "env/render.py": "2aa74fc376175824b123c9fbbcecf172e030eabd4d5010cc65d8ee686b40bfb1",
+    "env/siege_env.py": "d0d9172465b434d55e9b141e15eda4077b4d10b5111d37a423e1d97d1951fdf6",
+    "env/symmetry.py": "5bdb56e396afcde63035b7ff28f391c7fe87d510e1eace240607c5c0de95192d",
+    "agents/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "agents/heuristic.py": "932d9202d3b063ded37bbb4b86b43a45f88205059443db90e4fff5321c464ace",
+    "agents/random_agent.py": "86047f72ebc513ff857ddf90770a9358631412d497e46e2c2c87815f0b94c447",
+    "train/__init__.py": "32bbc59deb3a5284744af89c8c962b7aec9663a4e7aabd80601496af3e02be85",
+    "train/checkpoints.py": "70d56b2ac707fabdce2134677cb06157ec8455de21ed30cf4c5fa30873001591",
+    "train/evaluate.py": "588182bae455ae9407511bd0d6768e38e14624c4360f1b91847bc12a1028565f",
+    "train/features.py": "dfb271e9ef389724aee7d3d649614e2d8715492b8518e667360a134b19dbacba",
+    "train/train_ppo.py": "56ce5e1feadff16b8d2dbd0c3b80e7387e0e633cd7c31cbb14efd700626b946a",
+    "experiments/__init__.py": "a2d1601abc2a4b3a12ed73e8e1fe44e0791ba95cbbf755308c43da1c49cbbfc8",
+    "experiments/design.py": "c74d1d177ec4b196cbad5552acc8431b6f111e8b82b7e25ac875451939aa828a",
+    "experiments/journal.py": "e132076a678cb1fb52b59a9cec53f9c269e406813b9740e9f336cadf5ceff037",
+    "experiments/pilot.py": "8410d23b0fff2db48b2fec02f08bae84d41efef0b05fe36c539133dd3cab700c",
+    "experiments/pools.py": "f56b0d8f6b655eab7788e02265f73548c3bc29b9be8746878e9927177ab7bd9b",
+    "experiments/protocol.py": "8580719d10b4907728921aa946729f6a61311af45376ebd1a2788273d6334917",
+    "experiments/provenance.py": "0a4d47b10dc480294c089ba4297c2b6f4351323a5d38c6123e2a6e3f8ac589b7",
+    "experiments/rollout.py": "91f706e59212e86e141a5c91e9586f03cad5a281dbf1e862335a8b59f48c46cc",
+    "experiments/storage.py": "f71f31fa85c1055d29e3f83fb2f64867615546513f3e2a57f112d97318893a4a",
+    "experiments/study.py": "67392847f85d530cc42bd6e751c887216d5febd2f7ed1e9c31a431a3360e1160",
+    "ddqn_experiment/__init__.py": "9ea1134561043e0749d503ec67634b564beeeabba0e9c9163fbbc9fd3504ddce",
+    "ddqn_experiment/__main__.py": "7b7f16380dc6482616c1bef9cf97a0637a7fb16a1726174cedf1332a1ffd8158",
+    "ddqn_experiment/core.py": "a69795f7d439bba5f47abc1e70ad10bee88be710208320e070b3a330b0279e92",
+    "ddqn_experiment/evaluation.py": "7ae18d2aad4d705d7e02d991eebc94e0fb032111d9339e7117230048816fab55",
+    "ddqn_experiment/runner.py": "deeb3eb41134edabff23b2e87327f3dcfa77885463183e2c45dd7449585ed233"
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "packages": {
+      "numpy": "2.5.2",
+      "torch": "2.13.0",
+      "gymnasium": "1.3.0",
+      "stable-baselines3": "2.9.0",
+      "sb3-contrib": "2.9.0"
+    }
+  },
+  "identity": {
+    "algorithm": "masked-double-dqn",
+    "learner_seed": 100,
+    "condition": "no-augmentation",
+    "training_steps": 2097152,
+    "training_mode": "pilot",
+    "policy_sha256": "c76232fc77ca43bf2cab616d2546324d9026d7a870df28f17ba4388b458fbdc9",
+    "training_contract_sha256": "da9cbc73ab732fb98f2b9c0ce35b2da58601cf6f789b04f99949d9dcd433bf86",
+    "acting": "greedy-legal-lowest-index-tie"
+  },
+  "reference_loader": "Original ddqn_experiment.evaluation.load_policy with strict source/runtime checks enabled",
+  "cases": [
+    {
+      "base_seed": 42,
+      "motif": "closed_ring",
+      "view": 0,
+      "spec": {
+        "buildings": [
+          [
+            "cannon",
+            7,
+            6
+          ],
+          [
+            "cannon",
+            8,
+            9
+          ],
+          [
+            "cannon",
+            9,
+            7
+          ],
+          [
+            "mortar",
+            11,
+            6
+          ],
+          [
+            "mortar",
+            11,
+            9
+          ],
+          [
+            "storage",
+            4,
+            10
+          ],
+          [
+            "storage",
+            5,
+            9
+          ],
+          [
+            "storage",
+            10,
+            7
+          ],
+          [
+            "storage",
+            11,
+            11
+          ],
+          [
+            "town_hall",
+            4,
+            9
+          ]
+        ],
+        "motif": "closed_ring",
+        "seed": 42,
+        "walls": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            7,
+            12
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            8,
+            12
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            12,
+            4
+          ],
+          [
+            12,
+            5
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            12,
+            7
+          ],
+          [
+            12,
+            8
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            12,
+            10
+          ],
+          [
+            12,
+            11
+          ],
+          [
+            12,
+            12
+          ]
+        ]
+      },
+      "actions": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        2,
+        0,
+        2,
+        1,
+        2,
+        1,
+        1,
+        2,
+        0,
+        1,
+        2,
+        4,
+        59,
+        59,
+        11,
+        179,
+        150,
+        179,
+        156,
+        179,
+        112,
+        112,
+        112,
+        87,
+        87,
+        87,
+        87,
+        87,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245
+      ],
+      "summary": {
+        "base_seed": 42,
+        "motif": "closed_ring",
+        "destruction": 0.8709677419354839,
+        "town_hall": true,
+        "full_clear": false,
+        "finish_reason": "army_eliminated",
+        "tick": 264,
+        "decisions": 44,
+        "spent": 189,
+        "reward_components": {
+          "destruction": 0.0,
+          "milestone": 0,
+          "cost_penalty": 0.0,
+          "wall_shaping": 0.0
+        },
+        "reward_totals": {
+          "destruction": 0.870967741935484,
+          "milestone": 0.5,
+          "cost_penalty": -0.2835,
+          "wall_shaping": 0.0
+        },
+        "episode_return": 1.0874677419354837,
+        "view": 0
+      }
+    },
+    {
+      "base_seed": 42,
+      "motif": "closed_ring",
+      "view": 1,
+      "spec": {
+        "buildings": [
+          [
+            "cannon",
+            7,
+            6
+          ],
+          [
+            "cannon",
+            8,
+            9
+          ],
+          [
+            "cannon",
+            9,
+            7
+          ],
+          [
+            "mortar",
+            11,
+            6
+          ],
+          [
+            "mortar",
+            11,
+            9
+          ],
+          [
+            "storage",
+            4,
+            10
+          ],
+          [
+            "storage",
+            5,
+            9
+          ],
+          [
+            "storage",
+            10,
+            7
+          ],
+          [
+            "storage",
+            11,
+            11
+          ],
+          [
+            "town_hall",
+            4,
+            9
+          ]
+        ],
+        "motif": "closed_ring",
+        "seed": 42,
+        "walls": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            7,
+            12
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            8,
+            12
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            12,
+            4
+          ],
+          [
+            12,
+            5
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            12,
+            7
+          ],
+          [
+            12,
+            8
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            12,
+            10
+          ],
+          [
+            12,
+            11
+          ],
+          [
+            12,
+            12
+          ]
+        ]
+      },
+      "actions": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        2,
+        4,
+        58,
+        45,
+        58,
+        58,
+        58,
+        157,
+        73,
+        73,
+        73,
+        73,
+        121,
+        86,
+        86,
+        86,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245
+      ],
+      "summary": {
+        "base_seed": 42,
+        "motif": "closed_ring",
+        "destruction": 0.9354838709677419,
+        "town_hall": true,
+        "full_clear": false,
+        "finish_reason": "tick_limit",
+        "tick": 300,
+        "decisions": 45,
+        "spent": 199,
+        "reward_components": {
+          "destruction": 0.0,
+          "milestone": 0,
+          "cost_penalty": 0.0,
+          "wall_shaping": 0.0
+        },
+        "reward_totals": {
+          "destruction": 0.935483870967742,
+          "milestone": 0.5,
+          "cost_penalty": -0.2985,
+          "wall_shaping": 0.0
+        },
+        "episode_return": 1.1369838709677418,
+        "view": 1
+      }
+    },
+    {
+      "base_seed": 42,
+      "motif": "closed_ring",
+      "view": 2,
+      "spec": {
+        "buildings": [
+          [
+            "cannon",
+            7,
+            6
+          ],
+          [
+            "cannon",
+            8,
+            9
+          ],
+          [
+            "cannon",
+            9,
+            7
+          ],
+          [
+            "mortar",
+            11,
+            6
+          ],
+          [
+            "mortar",
+            11,
+            9
+          ],
+          [
+            "storage",
+            4,
+            10
+          ],
+          [
+            "storage",
+            5,
+            9
+          ],
+          [
+            "storage",
+            10,
+            7
+          ],
+          [
+            "storage",
+            11,
+            11
+          ],
+          [
+            "town_hall",
+            4,
+            9
+          ]
+        ],
+        "motif": "closed_ring",
+        "seed": 42,
+        "walls": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            7,
+            12
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            8,
+            12
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            12,
+            4
+          ],
+          [
+            12,
+            5
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            12,
+            7
+          ],
+          [
+            12,
+            8
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            12,
+            10
+          ],
+          [
+            12,
+            11
+          ],
+          [
+            12,
+            12
+          ]
+        ]
+      },
+      "actions": [
+        0,
+        1,
+        2,
+        0,
+        1,
+        2,
+        2,
+        2,
+        0,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        2,
+        4,
+        97,
+        39,
+        39,
+        61,
+        73,
+        73,
+        73,
+        161,
+        161,
+        158,
+        158,
+        158,
+        158,
+        158,
+        117,
+        73,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245
+      ],
+      "summary": {
+        "base_seed": 42,
+        "motif": "closed_ring",
+        "destruction": 0.6774193548387096,
+        "town_hall": true,
+        "full_clear": false,
+        "finish_reason": "army_eliminated",
+        "tick": 255,
+        "decisions": 43,
+        "spent": 193,
+        "reward_components": {
+          "destruction": 0.0,
+          "milestone": 0,
+          "cost_penalty": 0.0,
+          "wall_shaping": 0.0
+        },
+        "reward_totals": {
+          "destruction": 0.6774193548387097,
+          "milestone": 0.5,
+          "cost_penalty": -0.2895,
+          "wall_shaping": 0.0
+        },
+        "episode_return": 0.8879193548387099,
+        "view": 2
+      }
+    },
+    {
+      "base_seed": 42,
+      "motif": "closed_ring",
+      "view": 3,
+      "spec": {
+        "buildings": [
+          [
+            "cannon",
+            7,
+            6
+          ],
+          [
+            "cannon",
+            8,
+            9
+          ],
+          [
+            "cannon",
+            9,
+            7
+          ],
+          [
+            "mortar",
+            11,
+            6
+          ],
+          [
+            "mortar",
+            11,
+            9
+          ],
+          [
+            "storage",
+            4,
+            10
+          ],
+          [
+            "storage",
+            5,
+            9
+          ],
+          [
+            "storage",
+            10,
+            7
+          ],
+          [
+            "storage",
+            11,
+            11
+          ],
+          [
+            "town_hall",
+            4,
+            9
+          ]
+        ],
+        "motif": "closed_ring",
+        "seed": 42,
+        "walls": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            7,
+            12
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            8,
+            12
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            12,
+            4
+          ],
+          [
+            12,
+            5
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            12,
+            7
+          ],
+          [
+            12,
+            8
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            12,
+            10
+          ],
+          [
+            12,
+            11
+          ],
+          [
+            12,
+            12
+          ]
+        ]
+      },
+      "actions": [
+        1,
+        1,
+        1,
+        2,
+        0,
+        2,
+        2,
+        2,
+        0,
+        1,
+        2,
+        1,
+        1,
+        1,
+        2,
+        1,
+        0,
+        4,
+        16,
+        118,
+        118,
+        113,
+        16,
+        11,
+        155,
+        112,
+        112,
+        131,
+        184,
+        184,
+        184,
+        184,
+        73,
+        73,
+        245,
+        87,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245
+      ],
+      "summary": {
+        "base_seed": 42,
+        "motif": "closed_ring",
+        "destruction": 0.6774193548387096,
+        "town_hall": true,
+        "full_clear": false,
+        "finish_reason": "army_eliminated",
+        "tick": 255,
+        "decisions": 44,
+        "spent": 199,
+        "reward_components": {
+          "destruction": 0.0,
+          "milestone": 0,
+          "cost_penalty": 0.0,
+          "wall_shaping": 0.0
+        },
+        "reward_totals": {
+          "destruction": 0.6774193548387097,
+          "milestone": 0.5,
+          "cost_penalty": -0.2985,
+          "wall_shaping": 0.0
+        },
+        "episode_return": 0.8789193548387098,
+        "view": 3
+      }
+    },
+    {
+      "base_seed": 42,
+      "motif": "closed_ring",
+      "view": 4,
+      "spec": {
+        "buildings": [
+          [
+            "cannon",
+            7,
+            6
+          ],
+          [
+            "cannon",
+            8,
+            9
+          ],
+          [
+            "cannon",
+            9,
+            7
+          ],
+          [
+            "mortar",
+            11,
+            6
+          ],
+          [
+            "mortar",
+            11,
+            9
+          ],
+          [
+            "storage",
+            4,
+            10
+          ],
+          [
+            "storage",
+            5,
+            9
+          ],
+          [
+            "storage",
+            10,
+            7
+          ],
+          [
+            "storage",
+            11,
+            11
+          ],
+          [
+            "town_hall",
+            4,
+            9
+          ]
+        ],
+        "motif": "closed_ring",
+        "seed": 42,
+        "walls": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            7,
+            12
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            8,
+            12
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            12,
+            4
+          ],
+          [
+            12,
+            5
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            12,
+            7
+          ],
+          [
+            12,
+            8
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            12,
+            10
+          ],
+          [
+            12,
+            11
+          ],
+          [
+            12,
+            12
+          ]
+        ]
+      },
+      "actions": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        2,
+        0,
+        2,
+        2,
+        1,
+        2,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        4,
+        59,
+        59,
+        73,
+        184,
+        184,
+        184,
+        184,
+        184,
+        184,
+        87,
+        87,
+        87,
+        87,
+        87,
+        87,
+        83,
+        83,
+        245,
+        94,
+        94,
+        245,
+        245,
+        245,
+        245,
+        245
+      ],
+      "summary": {
+        "base_seed": 42,
+        "motif": "closed_ring",
+        "destruction": 0.6774193548387096,
+        "town_hall": true,
+        "full_clear": false,
+        "finish_reason": "army_eliminated",
+        "tick": 243,
+        "decisions": 45,
+        "spent": 198,
+        "reward_components": {
+          "destruction": 0.0,
+          "milestone": 0,
+          "cost_penalty": 0.0,
+          "wall_shaping": 0.0
+        },
+        "reward_totals": {
+          "destruction": 0.6774193548387097,
+          "milestone": 0.5,
+          "cost_penalty": -0.297,
+          "wall_shaping": 0.0
+        },
+        "episode_return": 0.8804193548387098,
+        "view": 4
+      }
+    },
+    {
+      "base_seed": 42,
+      "motif": "closed_ring",
+      "view": 5,
+      "spec": {
+        "buildings": [
+          [
+            "cannon",
+            7,
+            6
+          ],
+          [
+            "cannon",
+            8,
+            9
+          ],
+          [
+            "cannon",
+            9,
+            7
+          ],
+          [
+            "mortar",
+            11,
+            6
+          ],
+          [
+            "mortar",
+            11,
+            9
+          ],
+          [
+            "storage",
+            4,
+            10
+          ],
+          [
+            "storage",
+            5,
+            9
+          ],
+          [
+            "storage",
+            10,
+            7
+          ],
+          [
+            "storage",
+            11,
+            11
+          ],
+          [
+            "town_hall",
+            4,
+            9
+          ]
+        ],
+        "motif": "closed_ring",
+        "seed": 42,
+        "walls": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            7,
+            12
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            8,
+            12
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            12,
+            4
+          ],
+          [
+            12,
+            5
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            12,
+            7
+          ],
+          [
+            12,
+            8
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            12,
+            10
+          ],
+          [
+            12,
+            11
+          ],
+          [
+            12,
+            12
+          ]
+        ]
+      },
+      "actions": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        2,
+        0,
+        2,
+        2,
+        0,
+        4,
+        45,
+        45,
+        73,
+        61,
+        61,
+        61,
+        61,
+        145,
+        158,
+        158,
+        145,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245
+      ],
+      "summary": {
+        "base_seed": 42,
+        "motif": "closed_ring",
+        "destruction": 0.9354838709677419,
+        "town_hall": true,
+        "full_clear": false,
+        "finish_reason": "tick_limit",
+        "tick": 300,
+        "decisions": 42,
+        "spent": 198,
+        "reward_components": {
+          "destruction": 0.0,
+          "milestone": 0,
+          "cost_penalty": 0.0,
+          "wall_shaping": 0.0
+        },
+        "reward_totals": {
+          "destruction": 0.9354838709677418,
+          "milestone": 0.5,
+          "cost_penalty": -0.297,
+          "wall_shaping": 0.0
+        },
+        "episode_return": 1.1384838709677418,
+        "view": 5
+      }
+    },
+    {
+      "base_seed": 42,
+      "motif": "closed_ring",
+      "view": 6,
+      "spec": {
+        "buildings": [
+          [
+            "cannon",
+            7,
+            6
+          ],
+          [
+            "cannon",
+            8,
+            9
+          ],
+          [
+            "cannon",
+            9,
+            7
+          ],
+          [
+            "mortar",
+            11,
+            6
+          ],
+          [
+            "mortar",
+            11,
+            9
+          ],
+          [
+            "storage",
+            4,
+            10
+          ],
+          [
+            "storage",
+            5,
+            9
+          ],
+          [
+            "storage",
+            10,
+            7
+          ],
+          [
+            "storage",
+            11,
+            11
+          ],
+          [
+            "town_hall",
+            4,
+            9
+          ]
+        ],
+        "motif": "closed_ring",
+        "seed": 42,
+        "walls": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            7,
+            12
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            8,
+            12
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            12,
+            4
+          ],
+          [
+            12,
+            5
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            12,
+            7
+          ],
+          [
+            12,
+            8
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            12,
+            10
+          ],
+          [
+            12,
+            11
+          ],
+          [
+            12,
+            12
+          ]
+        ]
+      },
+      "actions": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        2,
+        0,
+        2,
+        1,
+        2,
+        1,
+        1,
+        0,
+        1,
+        2,
+        1,
+        2,
+        2,
+        1,
+        4,
+        16,
+        12,
+        101,
+        101,
+        101,
+        158,
+        180,
+        180,
+        180,
+        112,
+        112,
+        182,
+        168,
+        168,
+        117,
+        101,
+        76,
+        114,
+        121,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245
+      ],
+      "summary": {
+        "base_seed": 42,
+        "motif": "closed_ring",
+        "destruction": 1.0,
+        "town_hall": true,
+        "full_clear": true,
+        "finish_reason": "full_clear",
+        "tick": 282,
+        "decisions": 49,
+        "spent": 200,
+        "reward_components": {
+          "destruction": 0.06451612903225806,
+          "milestone": 0.25,
+          "cost_penalty": 0.0,
+          "wall_shaping": 0.0
+        },
+        "reward_totals": {
+          "destruction": 1.0,
+          "milestone": 0.75,
+          "cost_penalty": -0.3,
+          "wall_shaping": 0.0
+        },
+        "episode_return": 1.4499999999999997,
+        "view": 6
+      }
+    },
+    {
+      "base_seed": 42,
+      "motif": "closed_ring",
+      "view": 7,
+      "spec": {
+        "buildings": [
+          [
+            "cannon",
+            7,
+            6
+          ],
+          [
+            "cannon",
+            8,
+            9
+          ],
+          [
+            "cannon",
+            9,
+            7
+          ],
+          [
+            "mortar",
+            11,
+            6
+          ],
+          [
+            "mortar",
+            11,
+            9
+          ],
+          [
+            "storage",
+            4,
+            10
+          ],
+          [
+            "storage",
+            5,
+            9
+          ],
+          [
+            "storage",
+            10,
+            7
+          ],
+          [
+            "storage",
+            11,
+            11
+          ],
+          [
+            "town_hall",
+            4,
+            9
+          ]
+        ],
+        "motif": "closed_ring",
+        "seed": 42,
+        "walls": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            7,
+            12
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            8,
+            12
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            12,
+            4
+          ],
+          [
+            12,
+            5
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            12,
+            7
+          ],
+          [
+            12,
+            8
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            12,
+            10
+          ],
+          [
+            12,
+            11
+          ],
+          [
+            12,
+            12
+          ]
+        ]
+      },
+      "actions": [
+        1,
+        1,
+        1,
+        0,
+        2,
+        2,
+        2,
+        0,
+        2,
+        2,
+        1,
+        1,
+        1,
+        2,
+        0,
+        2,
+        4,
+        54,
+        54,
+        54,
+        114,
+        136,
+        136,
+        106,
+        106,
+        106,
+        106,
+        106,
+        175,
+        175,
+        175,
+        175,
+        175,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245
+      ],
+      "summary": {
+        "base_seed": 42,
+        "motif": "closed_ring",
+        "destruction": 0.6774193548387096,
+        "town_hall": true,
+        "full_clear": false,
+        "finish_reason": "army_eliminated",
+        "tick": 251,
+        "decisions": 43,
+        "spent": 193,
+        "reward_components": {
+          "destruction": 0.0,
+          "milestone": 0,
+          "cost_penalty": 0.0,
+          "wall_shaping": 0.0
+        },
+        "reward_totals": {
+          "destruction": 0.6774193548387097,
+          "milestone": 0.5,
+          "cost_penalty": -0.2895,
+          "wall_shaping": 0.0
+        },
+        "episode_return": 0.8879193548387097,
+        "view": 7
+      }
+    },
+    {
+      "base_seed": 42,
+      "motif": "ns_gates",
+      "view": 0,
+      "spec": {
+        "buildings": [
+          [
+            "cannon",
+            7,
+            6
+          ],
+          [
+            "cannon",
+            8,
+            9
+          ],
+          [
+            "cannon",
+            9,
+            7
+          ],
+          [
+            "mortar",
+            11,
+            6
+          ],
+          [
+            "mortar",
+            11,
+            9
+          ],
+          [
+            "storage",
+            4,
+            10
+          ],
+          [
+            "storage",
+            5,
+            9
+          ],
+          [
+            "storage",
+            10,
+            7
+          ],
+          [
+            "storage",
+            11,
+            11
+          ],
+          [
+            "town_hall",
+            4,
+            9
+          ]
+        ],
+        "motif": "ns_gates",
+        "seed": 42,
+        "walls": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            7,
+            12
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            8,
+            12
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            12,
+            4
+          ],
+          [
+            12,
+            5
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            12,
+            10
+          ],
+          [
+            12,
+            11
+          ],
+          [
+            12,
+            12
+          ]
+        ]
+      },
+      "actions": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        2,
+        0,
+        2,
+        1,
+        2,
+        1,
+        0,
+        1,
+        2,
+        1,
+        1,
+        2,
+        4,
+        59,
+        59,
+        11,
+        179,
+        179,
+        179,
+        179,
+        179,
+        112,
+        112,
+        112,
+        94,
+        94,
+        94,
+        94,
+        94,
+        94,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245
+      ],
+      "summary": {
+        "base_seed": 42,
+        "motif": "ns_gates",
+        "destruction": 0.7419354838709677,
+        "town_hall": true,
+        "full_clear": false,
+        "finish_reason": "army_eliminated",
+        "tick": 229,
+        "decisions": 41,
+        "spent": 197,
+        "reward_components": {
+          "destruction": 0.0,
+          "milestone": 0,
+          "cost_penalty": 0.0,
+          "wall_shaping": 0.0
+        },
+        "reward_totals": {
+          "destruction": 0.7419354838709677,
+          "milestone": 0.5,
+          "cost_penalty": -0.2955,
+          "wall_shaping": 0.0
+        },
+        "episode_return": 0.9464354838709679,
+        "view": 0
+      }
+    },
+    {
+      "base_seed": 42,
+      "motif": "ns_gates",
+      "view": 1,
+      "spec": {
+        "buildings": [
+          [
+            "cannon",
+            7,
+            6
+          ],
+          [
+            "cannon",
+            8,
+            9
+          ],
+          [
+            "cannon",
+            9,
+            7
+          ],
+          [
+            "mortar",
+            11,
+            6
+          ],
+          [
+            "mortar",
+            11,
+            9
+          ],
+          [
+            "storage",
+            4,
+            10
+          ],
+          [
+            "storage",
+            5,
+            9
+          ],
+          [
+            "storage",
+            10,
+            7
+          ],
+          [
+            "storage",
+            11,
+            11
+          ],
+          [
+            "town_hall",
+            4,
+            9
+          ]
+        ],
+        "motif": "ns_gates",
+        "seed": 42,
+        "walls": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            7,
+            12
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            8,
+            12
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            12,
+            4
+          ],
+          [
+            12,
+            5
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            12,
+            10
+          ],
+          [
+            12,
+            11
+          ],
+          [
+            12,
+            12
+          ]
+        ]
+      },
+      "actions": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        3,
+        3,
+        3,
+        3,
+        1,
+        3,
+        0,
+        2,
+        4,
+        45,
+        58,
+        58,
+        189,
+        227,
+        73,
+        135,
+        239,
+        239,
+        239,
+        73,
+        73,
+        100,
+        76,
+        76,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245
+      ],
+      "summary": {
+        "base_seed": 42,
+        "motif": "ns_gates",
+        "destruction": 0.16129032258064516,
+        "town_hall": false,
+        "full_clear": false,
+        "finish_reason": "tick_limit",
+        "tick": 300,
+        "decisions": 46,
+        "spent": 193,
+        "reward_components": {
+          "destruction": 0.0,
+          "milestone": 0,
+          "cost_penalty": 0.0,
+          "wall_shaping": 0.0
+        },
+        "reward_totals": {
+          "destruction": 0.16129032258064516,
+          "milestone": 0.0,
+          "cost_penalty": -0.2895,
+          "wall_shaping": 0.0
+        },
+        "episode_return": -0.12820967741935482,
+        "view": 1
+      }
+    },
+    {
+      "base_seed": 42,
+      "motif": "ns_gates",
+      "view": 2,
+      "spec": {
+        "buildings": [
+          [
+            "cannon",
+            7,
+            6
+          ],
+          [
+            "cannon",
+            8,
+            9
+          ],
+          [
+            "cannon",
+            9,
+            7
+          ],
+          [
+            "mortar",
+            11,
+            6
+          ],
+          [
+            "mortar",
+            11,
+            9
+          ],
+          [
+            "storage",
+            4,
+            10
+          ],
+          [
+            "storage",
+            5,
+            9
+          ],
+          [
+            "storage",
+            10,
+            7
+          ],
+          [
+            "storage",
+            11,
+            11
+          ],
+          [
+            "town_hall",
+            4,
+            9
+          ]
+        ],
+        "motif": "ns_gates",
+        "seed": 42,
+        "walls": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            7,
+            12
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            8,
+            12
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            12,
+            4
+          ],
+          [
+            12,
+            5
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            12,
+            10
+          ],
+          [
+            12,
+            11
+          ],
+          [
+            12,
+            12
+          ]
+        ]
+      },
+      "actions": [
+        0,
+        2,
+        0,
+        1,
+        2,
+        2,
+        2,
+        0,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        2,
+        2,
+        4,
+        97,
+        97,
+        97,
+        97,
+        61,
+        61,
+        61,
+        97,
+        158,
+        158,
+        158,
+        172,
+        182,
+        168,
+        168,
+        158,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245
+      ],
+      "summary": {
+        "base_seed": 42,
+        "motif": "ns_gates",
+        "destruction": 0.7419354838709677,
+        "town_hall": true,
+        "full_clear": false,
+        "finish_reason": "army_eliminated",
+        "tick": 258,
+        "decisions": 43,
+        "spent": 195,
+        "reward_components": {
+          "destruction": 0.0,
+          "milestone": 0,
+          "cost_penalty": 0.0,
+          "wall_shaping": 0.0
+        },
+        "reward_totals": {
+          "destruction": 0.7419354838709677,
+          "milestone": 0.5,
+          "cost_penalty": -0.2925,
+          "wall_shaping": 0.0
+        },
+        "episode_return": 0.9494354838709678,
+        "view": 2
+      }
+    },
+    {
+      "base_seed": 42,
+      "motif": "ns_gates",
+      "view": 3,
+      "spec": {
+        "buildings": [
+          [
+            "cannon",
+            7,
+            6
+          ],
+          [
+            "cannon",
+            8,
+            9
+          ],
+          [
+            "cannon",
+            9,
+            7
+          ],
+          [
+            "mortar",
+            11,
+            6
+          ],
+          [
+            "mortar",
+            11,
+            9
+          ],
+          [
+            "storage",
+            4,
+            10
+          ],
+          [
+            "storage",
+            5,
+            9
+          ],
+          [
+            "storage",
+            10,
+            7
+          ],
+          [
+            "storage",
+            11,
+            11
+          ],
+          [
+            "town_hall",
+            4,
+            9
+          ]
+        ],
+        "motif": "ns_gates",
+        "seed": 42,
+        "walls": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            7,
+            12
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            8,
+            12
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            12,
+            4
+          ],
+          [
+            12,
+            5
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            12,
+            10
+          ],
+          [
+            12,
+            11
+          ],
+          [
+            12,
+            12
+          ]
+        ]
+      },
+      "actions": [
+        1,
+        1,
+        1,
+        2,
+        0,
+        2,
+        2,
+        2,
+        0,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        2,
+        0,
+        4,
+        16,
+        113,
+        113,
+        113,
+        113,
+        113,
+        60,
+        61,
+        184,
+        184,
+        184,
+        184,
+        184,
+        184,
+        87,
+        87,
+        83,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245
+      ],
+      "summary": {
+        "base_seed": 42,
+        "motif": "ns_gates",
+        "destruction": 0.6774193548387096,
+        "town_hall": true,
+        "full_clear": false,
+        "finish_reason": "army_eliminated",
+        "tick": 285,
+        "decisions": 47,
+        "spent": 199,
+        "reward_components": {
+          "destruction": 0.0,
+          "milestone": 0,
+          "cost_penalty": 0.0,
+          "wall_shaping": 0.0
+        },
+        "reward_totals": {
+          "destruction": 0.6774193548387097,
+          "milestone": 0.5,
+          "cost_penalty": -0.2985,
+          "wall_shaping": 0.0
+        },
+        "episode_return": 0.8789193548387098,
+        "view": 3
+      }
+    },
+    {
+      "base_seed": 42,
+      "motif": "ns_gates",
+      "view": 4,
+      "spec": {
+        "buildings": [
+          [
+            "cannon",
+            7,
+            6
+          ],
+          [
+            "cannon",
+            8,
+            9
+          ],
+          [
+            "cannon",
+            9,
+            7
+          ],
+          [
+            "mortar",
+            11,
+            6
+          ],
+          [
+            "mortar",
+            11,
+            9
+          ],
+          [
+            "storage",
+            4,
+            10
+          ],
+          [
+            "storage",
+            5,
+            9
+          ],
+          [
+            "storage",
+            10,
+            7
+          ],
+          [
+            "storage",
+            11,
+            11
+          ],
+          [
+            "town_hall",
+            4,
+            9
+          ]
+        ],
+        "motif": "ns_gates",
+        "seed": 42,
+        "walls": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            7,
+            12
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            8,
+            12
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            12,
+            4
+          ],
+          [
+            12,
+            5
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            12,
+            10
+          ],
+          [
+            12,
+            11
+          ],
+          [
+            12,
+            12
+          ]
+        ]
+      },
+      "actions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        2,
+        2,
+        2,
+        1,
+        2,
+        1,
+        2,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        4,
+        59,
+        59,
+        184,
+        184,
+        184,
+        184,
+        184,
+        73,
+        72,
+        122,
+        87,
+        87,
+        87,
+        87,
+        87,
+        83,
+        83,
+        83,
+        245,
+        245,
+        94,
+        245,
+        245,
+        245,
+        245,
+        245
+      ],
+      "summary": {
+        "base_seed": 42,
+        "motif": "ns_gates",
+        "destruction": 0.6774193548387096,
+        "town_hall": true,
+        "full_clear": false,
+        "finish_reason": "army_eliminated",
+        "tick": 256,
+        "decisions": 46,
+        "spent": 196,
+        "reward_components": {
+          "destruction": 0.0,
+          "milestone": 0,
+          "cost_penalty": 0.0,
+          "wall_shaping": 0.0
+        },
+        "reward_totals": {
+          "destruction": 0.6774193548387097,
+          "milestone": 0.5,
+          "cost_penalty": -0.294,
+          "wall_shaping": 0.0
+        },
+        "episode_return": 0.8834193548387097,
+        "view": 4
+      }
+    },
+    {
+      "base_seed": 42,
+      "motif": "ns_gates",
+      "view": 5,
+      "spec": {
+        "buildings": [
+          [
+            "cannon",
+            7,
+            6
+          ],
+          [
+            "cannon",
+            8,
+            9
+          ],
+          [
+            "cannon",
+            9,
+            7
+          ],
+          [
+            "mortar",
+            11,
+            6
+          ],
+          [
+            "mortar",
+            11,
+            9
+          ],
+          [
+            "storage",
+            4,
+            10
+          ],
+          [
+            "storage",
+            5,
+            9
+          ],
+          [
+            "storage",
+            10,
+            7
+          ],
+          [
+            "storage",
+            11,
+            11
+          ],
+          [
+            "town_hall",
+            4,
+            9
+          ]
+        ],
+        "motif": "ns_gates",
+        "seed": 42,
+        "walls": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            7,
+            12
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            8,
+            12
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            12,
+            4
+          ],
+          [
+            12,
+            5
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            12,
+            10
+          ],
+          [
+            12,
+            11
+          ],
+          [
+            12,
+            12
+          ]
+        ]
+      },
+      "actions": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        2,
+        0,
+        2,
+        2,
+        2,
+        0,
+        2,
+        1,
+        4,
+        45,
+        45,
+        45,
+        73,
+        73,
+        61,
+        61,
+        73,
+        158,
+        158,
+        158,
+        158,
+        158,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245
+      ],
+      "summary": {
+        "base_seed": 42,
+        "motif": "ns_gates",
+        "destruction": 1.0,
+        "town_hall": true,
+        "full_clear": true,
+        "finish_reason": "full_clear",
+        "tick": 292,
+        "decisions": 44,
+        "spent": 199,
+        "reward_components": {
+          "destruction": 0.06451612903225806,
+          "milestone": 0.25,
+          "cost_penalty": 0.0,
+          "wall_shaping": 0.0
+        },
+        "reward_totals": {
+          "destruction": 1.0,
+          "milestone": 0.75,
+          "cost_penalty": -0.2985,
+          "wall_shaping": 0.0
+        },
+        "episode_return": 1.4515,
+        "view": 5
+      }
+    },
+    {
+      "base_seed": 42,
+      "motif": "ns_gates",
+      "view": 6,
+      "spec": {
+        "buildings": [
+          [
+            "cannon",
+            7,
+            6
+          ],
+          [
+            "cannon",
+            8,
+            9
+          ],
+          [
+            "cannon",
+            9,
+            7
+          ],
+          [
+            "mortar",
+            11,
+            6
+          ],
+          [
+            "mortar",
+            11,
+            9
+          ],
+          [
+            "storage",
+            4,
+            10
+          ],
+          [
+            "storage",
+            5,
+            9
+          ],
+          [
+            "storage",
+            10,
+            7
+          ],
+          [
+            "storage",
+            11,
+            11
+          ],
+          [
+            "town_hall",
+            4,
+            9
+          ]
+        ],
+        "motif": "ns_gates",
+        "seed": 42,
+        "walls": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            7,
+            12
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            8,
+            12
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            12,
+            4
+          ],
+          [
+            12,
+            5
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            12,
+            10
+          ],
+          [
+            12,
+            11
+          ],
+          [
+            12,
+            12
+          ]
+        ]
+      },
+      "actions": [
+        2,
+        2,
+        1,
+        1,
+        1,
+        0,
+        2,
+        1,
+        2,
+        1,
+        0,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        2,
+        4,
+        16,
+        16,
+        101,
+        101,
+        101,
+        101,
+        97,
+        101,
+        73,
+        158,
+        101,
+        101,
+        86,
+        175,
+        175,
+        127,
+        245,
+        245,
+        245,
+        175,
+        175,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245
+      ],
+      "summary": {
+        "base_seed": 42,
+        "motif": "ns_gates",
+        "destruction": 0.6774193548387096,
+        "town_hall": true,
+        "full_clear": false,
+        "finish_reason": "army_eliminated",
+        "tick": 279,
+        "decisions": 47,
+        "spent": 190,
+        "reward_components": {
+          "destruction": 0.0,
+          "milestone": 0,
+          "cost_penalty": 0.0,
+          "wall_shaping": 0.0
+        },
+        "reward_totals": {
+          "destruction": 0.6774193548387095,
+          "milestone": 0.5,
+          "cost_penalty": -0.285,
+          "wall_shaping": 0.0
+        },
+        "episode_return": 0.8924193548387096,
+        "view": 6
+      }
+    },
+    {
+      "base_seed": 42,
+      "motif": "ns_gates",
+      "view": 7,
+      "spec": {
+        "buildings": [
+          [
+            "cannon",
+            7,
+            6
+          ],
+          [
+            "cannon",
+            8,
+            9
+          ],
+          [
+            "cannon",
+            9,
+            7
+          ],
+          [
+            "mortar",
+            11,
+            6
+          ],
+          [
+            "mortar",
+            11,
+            9
+          ],
+          [
+            "storage",
+            4,
+            10
+          ],
+          [
+            "storage",
+            5,
+            9
+          ],
+          [
+            "storage",
+            10,
+            7
+          ],
+          [
+            "storage",
+            11,
+            11
+          ],
+          [
+            "town_hall",
+            4,
+            9
+          ]
+        ],
+        "motif": "ns_gates",
+        "seed": 42,
+        "walls": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            7,
+            12
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            8,
+            12
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            12,
+            4
+          ],
+          [
+            12,
+            5
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            12,
+            10
+          ],
+          [
+            12,
+            11
+          ],
+          [
+            12,
+            12
+          ]
+        ]
+      },
+      "actions": [
+        1,
+        1,
+        1,
+        0,
+        2,
+        2,
+        0,
+        2,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        0,
+        2,
+        1,
+        4,
+        16,
+        118,
+        54,
+        54,
+        134,
+        134,
+        178,
+        178,
+        178,
+        178,
+        73,
+        94,
+        94,
+        94,
+        94,
+        94,
+        245,
+        94,
+        245,
+        245,
+        245,
+        245,
+        245
+      ],
+      "summary": {
+        "base_seed": 42,
+        "motif": "ns_gates",
+        "destruction": 0.7419354838709677,
+        "town_hall": true,
+        "full_clear": false,
+        "finish_reason": "army_eliminated",
+        "tick": 228,
+        "decisions": 41,
+        "spent": 199,
+        "reward_components": {
+          "destruction": 0.0,
+          "milestone": 0,
+          "cost_penalty": 0.0,
+          "wall_shaping": 0.0
+        },
+        "reward_totals": {
+          "destruction": 0.7419354838709677,
+          "milestone": 0.5,
+          "cost_penalty": -0.2985,
+          "wall_shaping": 0.0
+        },
+        "episode_return": 0.9434354838709678,
+        "view": 7
+      }
+    },
+    {
+      "base_seed": 42,
+      "motif": "ew_gates",
+      "view": 0,
+      "spec": {
+        "buildings": [
+          [
+            "cannon",
+            7,
+            6
+          ],
+          [
+            "cannon",
+            8,
+            9
+          ],
+          [
+            "cannon",
+            9,
+            7
+          ],
+          [
+            "mortar",
+            11,
+            6
+          ],
+          [
+            "mortar",
+            11,
+            9
+          ],
+          [
+            "storage",
+            4,
+            10
+          ],
+          [
+            "storage",
+            5,
+            9
+          ],
+          [
+            "storage",
+            10,
+            7
+          ],
+          [
+            "storage",
+            11,
+            11
+          ],
+          [
+            "town_hall",
+            4,
+            9
+          ]
+        ],
+        "motif": "ew_gates",
+        "seed": 42,
+        "walls": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            12,
+            4
+          ],
+          [
+            12,
+            5
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            12,
+            7
+          ],
+          [
+            12,
+            8
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            12,
+            10
+          ],
+          [
+            12,
+            11
+          ],
+          [
+            12,
+            12
+          ]
+        ]
+      },
+      "actions": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        2,
+        0,
+        2,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        0,
+        2,
+        4,
+        57,
+        57,
+        11,
+        131,
+        179,
+        179,
+        179,
+        179,
+        112,
+        115,
+        87,
+        87,
+        87,
+        87,
+        87,
+        96,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245
+      ],
+      "summary": {
+        "base_seed": 42,
+        "motif": "ew_gates",
+        "destruction": 0.45161290322580644,
+        "town_hall": true,
+        "full_clear": false,
+        "finish_reason": "tick_limit",
+        "tick": 300,
+        "decisions": 47,
+        "spent": 189,
+        "reward_components": {
+          "destruction": 0.0,
+          "milestone": 0,
+          "cost_penalty": 0.0,
+          "wall_shaping": 0.0
+        },
+        "reward_totals": {
+          "destruction": 0.45161290322580644,
+          "milestone": 0.25,
+          "cost_penalty": -0.2835,
+          "wall_shaping": 0.0
+        },
+        "episode_return": 0.41811290322580646,
+        "view": 0
+      }
+    },
+    {
+      "base_seed": 42,
+      "motif": "ew_gates",
+      "view": 1,
+      "spec": {
+        "buildings": [
+          [
+            "cannon",
+            7,
+            6
+          ],
+          [
+            "cannon",
+            8,
+            9
+          ],
+          [
+            "cannon",
+            9,
+            7
+          ],
+          [
+            "mortar",
+            11,
+            6
+          ],
+          [
+            "mortar",
+            11,
+            9
+          ],
+          [
+            "storage",
+            4,
+            10
+          ],
+          [
+            "storage",
+            5,
+            9
+          ],
+          [
+            "storage",
+            10,
+            7
+          ],
+          [
+            "storage",
+            11,
+            11
+          ],
+          [
+            "town_hall",
+            4,
+            9
+          ]
+        ],
+        "motif": "ew_gates",
+        "seed": 42,
+        "walls": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            12,
+            4
+          ],
+          [
+            12,
+            5
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            12,
+            7
+          ],
+          [
+            12,
+            8
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            12,
+            10
+          ],
+          [
+            12,
+            11
+          ],
+          [
+            12,
+            12
+          ]
+        ]
+      },
+      "actions": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        4,
+        59,
+        57,
+        57,
+        57,
+        135,
+        135,
+        135,
+        135,
+        73,
+        73,
+        101,
+        89,
+        73,
+        108,
+        86,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245
+      ],
+      "summary": {
+        "base_seed": 42,
+        "motif": "ew_gates",
+        "destruction": 1.0,
+        "town_hall": true,
+        "full_clear": true,
+        "finish_reason": "full_clear",
+        "tick": 295,
+        "decisions": 46,
+        "spent": 196,
+        "reward_components": {
+          "destruction": 0.06451612903225806,
+          "milestone": 0.25,
+          "cost_penalty": 0.0,
+          "wall_shaping": 0.0
+        },
+        "reward_totals": {
+          "destruction": 1.0,
+          "milestone": 0.75,
+          "cost_penalty": -0.294,
+          "wall_shaping": 0.0
+        },
+        "episode_return": 1.456,
+        "view": 1
+      }
+    },
+    {
+      "base_seed": 42,
+      "motif": "ew_gates",
+      "view": 2,
+      "spec": {
+        "buildings": [
+          [
+            "cannon",
+            7,
+            6
+          ],
+          [
+            "cannon",
+            8,
+            9
+          ],
+          [
+            "cannon",
+            9,
+            7
+          ],
+          [
+            "mortar",
+            11,
+            6
+          ],
+          [
+            "mortar",
+            11,
+            9
+          ],
+          [
+            "storage",
+            4,
+            10
+          ],
+          [
+            "storage",
+            5,
+            9
+          ],
+          [
+            "storage",
+            10,
+            7
+          ],
+          [
+            "storage",
+            11,
+            11
+          ],
+          [
+            "town_hall",
+            4,
+            9
+          ]
+        ],
+        "motif": "ew_gates",
+        "seed": 42,
+        "walls": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            12,
+            4
+          ],
+          [
+            12,
+            5
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            12,
+            7
+          ],
+          [
+            12,
+            8
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            12,
+            10
+          ],
+          [
+            12,
+            11
+          ],
+          [
+            12,
+            12
+          ]
+        ]
+      },
+      "actions": [
+        1,
+        0,
+        1,
+        2,
+        0,
+        2,
+        2,
+        2,
+        1,
+        2,
+        1,
+        0,
+        1,
+        1,
+        2,
+        2,
+        4,
+        39,
+        39,
+        39,
+        97,
+        97,
+        161,
+        124,
+        124,
+        124,
+        124,
+        158,
+        158,
+        158,
+        245,
+        158,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        175,
+        175,
+        245,
+        245,
+        245,
+        245
+      ],
+      "summary": {
+        "base_seed": 42,
+        "motif": "ew_gates",
+        "destruction": 0.6774193548387096,
+        "town_hall": true,
+        "full_clear": false,
+        "finish_reason": "army_eliminated",
+        "tick": 264,
+        "decisions": 44,
+        "spent": 193,
+        "reward_components": {
+          "destruction": 0.0,
+          "milestone": 0,
+          "cost_penalty": 0.0,
+          "wall_shaping": 0.0
+        },
+        "reward_totals": {
+          "destruction": 0.6774193548387097,
+          "milestone": 0.5,
+          "cost_penalty": -0.2895,
+          "wall_shaping": 0.0
+        },
+        "episode_return": 0.8879193548387097,
+        "view": 2
+      }
+    },
+    {
+      "base_seed": 42,
+      "motif": "ew_gates",
+      "view": 3,
+      "spec": {
+        "buildings": [
+          [
+            "cannon",
+            7,
+            6
+          ],
+          [
+            "cannon",
+            8,
+            9
+          ],
+          [
+            "cannon",
+            9,
+            7
+          ],
+          [
+            "mortar",
+            11,
+            6
+          ],
+          [
+            "mortar",
+            11,
+            9
+          ],
+          [
+            "storage",
+            4,
+            10
+          ],
+          [
+            "storage",
+            5,
+            9
+          ],
+          [
+            "storage",
+            10,
+            7
+          ],
+          [
+            "storage",
+            11,
+            11
+          ],
+          [
+            "town_hall",
+            4,
+            9
+          ]
+        ],
+        "motif": "ew_gates",
+        "seed": 42,
+        "walls": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            12,
+            4
+          ],
+          [
+            12,
+            5
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            12,
+            7
+          ],
+          [
+            12,
+            8
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            12,
+            10
+          ],
+          [
+            12,
+            11
+          ],
+          [
+            12,
+            12
+          ]
+        ]
+      },
+      "actions": [
+        1,
+        1,
+        1,
+        2,
+        0,
+        2,
+        2,
+        2,
+        0,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        4,
+        16,
+        16,
+        118,
+        155,
+        155,
+        155,
+        134,
+        156,
+        112,
+        112,
+        156,
+        182,
+        73,
+        73,
+        73,
+        73,
+        87,
+        83,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        94,
+        245,
+        245
+      ],
+      "summary": {
+        "base_seed": 42,
+        "motif": "ew_gates",
+        "destruction": 0.4838709677419355,
+        "town_hall": true,
+        "full_clear": false,
+        "finish_reason": "tick_limit",
+        "tick": 300,
+        "decisions": 50,
+        "spent": 200,
+        "reward_components": {
+          "destruction": 0.0,
+          "milestone": 0,
+          "cost_penalty": 0.0,
+          "wall_shaping": 0.0
+        },
+        "reward_totals": {
+          "destruction": 0.4838709677419355,
+          "milestone": 0.25,
+          "cost_penalty": -0.3,
+          "wall_shaping": 0.0
+        },
+        "episode_return": 0.43387096774193545,
+        "view": 3
+      }
+    },
+    {
+      "base_seed": 42,
+      "motif": "ew_gates",
+      "view": 4,
+      "spec": {
+        "buildings": [
+          [
+            "cannon",
+            7,
+            6
+          ],
+          [
+            "cannon",
+            8,
+            9
+          ],
+          [
+            "cannon",
+            9,
+            7
+          ],
+          [
+            "mortar",
+            11,
+            6
+          ],
+          [
+            "mortar",
+            11,
+            9
+          ],
+          [
+            "storage",
+            4,
+            10
+          ],
+          [
+            "storage",
+            5,
+            9
+          ],
+          [
+            "storage",
+            10,
+            7
+          ],
+          [
+            "storage",
+            11,
+            11
+          ],
+          [
+            "town_hall",
+            4,
+            9
+          ]
+        ],
+        "motif": "ew_gates",
+        "seed": 42,
+        "walls": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            12,
+            4
+          ],
+          [
+            12,
+            5
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            12,
+            7
+          ],
+          [
+            12,
+            8
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            12,
+            10
+          ],
+          [
+            12,
+            11
+          ],
+          [
+            12,
+            12
+          ]
+        ]
+      },
+      "actions": [
+        1,
+        1,
+        2,
+        2,
+        0,
+        2,
+        2,
+        2,
+        0,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        4,
+        59,
+        11,
+        11,
+        184,
+        184,
+        184,
+        184,
+        184,
+        184,
+        72,
+        72,
+        87,
+        87,
+        87,
+        87,
+        96,
+        245,
+        245,
+        245,
+        94,
+        245,
+        245,
+        245,
+        245,
+        245
+      ],
+      "summary": {
+        "base_seed": 42,
+        "motif": "ew_gates",
+        "destruction": 0.6774193548387096,
+        "town_hall": true,
+        "full_clear": false,
+        "finish_reason": "army_eliminated",
+        "tick": 242,
+        "decisions": 43,
+        "spent": 199,
+        "reward_components": {
+          "destruction": 0.0,
+          "milestone": 0,
+          "cost_penalty": 0.0,
+          "wall_shaping": 0.0
+        },
+        "reward_totals": {
+          "destruction": 0.6774193548387097,
+          "milestone": 0.5,
+          "cost_penalty": -0.2985,
+          "wall_shaping": 0.0
+        },
+        "episode_return": 0.8789193548387098,
+        "view": 4
+      }
+    },
+    {
+      "base_seed": 42,
+      "motif": "ew_gates",
+      "view": 5,
+      "spec": {
+        "buildings": [
+          [
+            "cannon",
+            7,
+            6
+          ],
+          [
+            "cannon",
+            8,
+            9
+          ],
+          [
+            "cannon",
+            9,
+            7
+          ],
+          [
+            "mortar",
+            11,
+            6
+          ],
+          [
+            "mortar",
+            11,
+            9
+          ],
+          [
+            "storage",
+            4,
+            10
+          ],
+          [
+            "storage",
+            5,
+            9
+          ],
+          [
+            "storage",
+            10,
+            7
+          ],
+          [
+            "storage",
+            11,
+            11
+          ],
+          [
+            "town_hall",
+            4,
+            9
+          ]
+        ],
+        "motif": "ew_gates",
+        "seed": 42,
+        "walls": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            12,
+            4
+          ],
+          [
+            12,
+            5
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            12,
+            7
+          ],
+          [
+            12,
+            8
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            12,
+            10
+          ],
+          [
+            12,
+            11
+          ],
+          [
+            12,
+            12
+          ]
+        ]
+      },
+      "actions": [
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        0,
+        2,
+        2,
+        4,
+        17,
+        17,
+        19,
+        19,
+        19,
+        145,
+        145,
+        145,
+        148,
+        157,
+        157,
+        157,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245
+      ],
+      "summary": {
+        "base_seed": 42,
+        "motif": "ew_gates",
+        "destruction": 0.6774193548387096,
+        "town_hall": true,
+        "full_clear": false,
+        "finish_reason": "army_eliminated",
+        "tick": 230,
+        "decisions": 36,
+        "spent": 195,
+        "reward_components": {
+          "destruction": 0.0,
+          "milestone": 0,
+          "cost_penalty": 0.0,
+          "wall_shaping": 0.0
+        },
+        "reward_totals": {
+          "destruction": 0.6774193548387097,
+          "milestone": 0.5,
+          "cost_penalty": -0.2925,
+          "wall_shaping": 0.0
+        },
+        "episode_return": 0.8849193548387098,
+        "view": 5
+      }
+    },
+    {
+      "base_seed": 42,
+      "motif": "ew_gates",
+      "view": 6,
+      "spec": {
+        "buildings": [
+          [
+            "cannon",
+            7,
+            6
+          ],
+          [
+            "cannon",
+            8,
+            9
+          ],
+          [
+            "cannon",
+            9,
+            7
+          ],
+          [
+            "mortar",
+            11,
+            6
+          ],
+          [
+            "mortar",
+            11,
+            9
+          ],
+          [
+            "storage",
+            4,
+            10
+          ],
+          [
+            "storage",
+            5,
+            9
+          ],
+          [
+            "storage",
+            10,
+            7
+          ],
+          [
+            "storage",
+            11,
+            11
+          ],
+          [
+            "town_hall",
+            4,
+            9
+          ]
+        ],
+        "motif": "ew_gates",
+        "seed": 42,
+        "walls": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            12,
+            4
+          ],
+          [
+            12,
+            5
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            12,
+            7
+          ],
+          [
+            12,
+            8
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            12,
+            10
+          ],
+          [
+            12,
+            11
+          ],
+          [
+            12,
+            12
+          ]
+        ]
+      },
+      "actions": [
+        2,
+        2,
+        1,
+        0,
+        1,
+        2,
+        1,
+        2,
+        0,
+        1,
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        2,
+        2,
+        4,
+        16,
+        16,
+        101,
+        101,
+        101,
+        158,
+        158,
+        158,
+        158,
+        101,
+        168,
+        168,
+        168,
+        168,
+        101,
+        101,
+        101,
+        245,
+        94,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245
+      ],
+      "summary": {
+        "base_seed": 42,
+        "motif": "ew_gates",
+        "destruction": 0.6774193548387096,
+        "town_hall": true,
+        "full_clear": false,
+        "finish_reason": "army_eliminated",
+        "tick": 247,
+        "decisions": 44,
+        "spent": 194,
+        "reward_components": {
+          "destruction": 0.0,
+          "milestone": 0,
+          "cost_penalty": 0.0,
+          "wall_shaping": 0.0
+        },
+        "reward_totals": {
+          "destruction": 0.6774193548387097,
+          "milestone": 0.5,
+          "cost_penalty": -0.291,
+          "wall_shaping": 0.0
+        },
+        "episode_return": 0.8864193548387098,
+        "view": 6
+      }
+    },
+    {
+      "base_seed": 42,
+      "motif": "ew_gates",
+      "view": 7,
+      "spec": {
+        "buildings": [
+          [
+            "cannon",
+            7,
+            6
+          ],
+          [
+            "cannon",
+            8,
+            9
+          ],
+          [
+            "cannon",
+            9,
+            7
+          ],
+          [
+            "mortar",
+            11,
+            6
+          ],
+          [
+            "mortar",
+            11,
+            9
+          ],
+          [
+            "storage",
+            4,
+            10
+          ],
+          [
+            "storage",
+            5,
+            9
+          ],
+          [
+            "storage",
+            10,
+            7
+          ],
+          [
+            "storage",
+            11,
+            11
+          ],
+          [
+            "town_hall",
+            4,
+            9
+          ]
+        ],
+        "motif": "ew_gates",
+        "seed": 42,
+        "walls": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            12,
+            4
+          ],
+          [
+            12,
+            5
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            12,
+            7
+          ],
+          [
+            12,
+            8
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            12,
+            10
+          ],
+          [
+            12,
+            11
+          ],
+          [
+            12,
+            12
+          ]
+        ]
+      },
+      "actions": [
+        1,
+        0,
+        1,
+        1,
+        0,
+        2,
+        2,
+        0,
+        2,
+        2,
+        1,
+        1,
+        2,
+        1,
+        0,
+        4,
+        16,
+        54,
+        54,
+        54,
+        134,
+        134,
+        178,
+        178,
+        178,
+        73,
+        85,
+        85,
+        85,
+        94,
+        94,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245
+      ],
+      "summary": {
+        "base_seed": 42,
+        "motif": "ew_gates",
+        "destruction": 0.6774193548387096,
+        "town_hall": true,
+        "full_clear": false,
+        "finish_reason": "army_eliminated",
+        "tick": 286,
+        "decisions": 45,
+        "spent": 198,
+        "reward_components": {
+          "destruction": 0.0,
+          "milestone": 0,
+          "cost_penalty": 0.0,
+          "wall_shaping": 0.0
+        },
+        "reward_totals": {
+          "destruction": 0.6774193548387095,
+          "milestone": 0.5,
+          "cost_penalty": -0.297,
+          "wall_shaping": 0.0
+        },
+        "episode_return": 0.8804193548387096,
+        "view": 7
+      }
+    },
+    {
+      "base_seed": 42,
+      "motif": "layered_core",
+      "view": 0,
+      "spec": {
+        "buildings": [
+          [
+            "cannon",
+            4,
+            8
+          ],
+          [
+            "cannon",
+            10,
+            11
+          ],
+          [
+            "cannon",
+            11,
+            8
+          ],
+          [
+            "mortar",
+            7,
+            7
+          ],
+          [
+            "mortar",
+            12,
+            11
+          ],
+          [
+            "storage",
+            4,
+            9
+          ],
+          [
+            "storage",
+            5,
+            5
+          ],
+          [
+            "storage",
+            8,
+            11
+          ],
+          [
+            "storage",
+            9,
+            7
+          ],
+          [
+            "town_hall",
+            8,
+            9
+          ]
+        ],
+        "motif": "layered_core",
+        "seed": 42,
+        "walls": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            6
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            6,
+            9
+          ],
+          [
+            6,
+            10
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            7,
+            6
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            8,
+            6
+          ],
+          [
+            8,
+            10
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            6
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            10,
+            6
+          ],
+          [
+            10,
+            7
+          ],
+          [
+            10,
+            8
+          ],
+          [
+            10,
+            9
+          ],
+          [
+            10,
+            10
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            12,
+            3
+          ]
+        ]
+      },
+      "actions": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        4,
+        177,
+        177,
+        177,
+        177,
+        177,
+        177,
+        177,
+        177,
+        172,
+        175,
+        175,
+        175,
+        175,
+        175,
+        65,
+        65,
+        65,
+        65,
+        65,
+        65,
+        65,
+        245,
+        245,
+        245,
+        245,
+        245
+      ],
+      "summary": {
+        "base_seed": 42,
+        "motif": "layered_core",
+        "destruction": 0.06451612903225806,
+        "town_hall": false,
+        "full_clear": false,
+        "finish_reason": "army_eliminated",
+        "tick": 260,
+        "decisions": 48,
+        "spent": 196,
+        "reward_components": {
+          "destruction": 0.0,
+          "milestone": 0,
+          "cost_penalty": 0.0,
+          "wall_shaping": 0.0
+        },
+        "reward_totals": {
+          "destruction": 0.06451612903225806,
+          "milestone": 0.0,
+          "cost_penalty": -0.294,
+          "wall_shaping": 0.0
+        },
+        "episode_return": -0.22948387096774192,
+        "view": 0
+      }
+    },
+    {
+      "base_seed": 42,
+      "motif": "layered_core",
+      "view": 1,
+      "spec": {
+        "buildings": [
+          [
+            "cannon",
+            4,
+            8
+          ],
+          [
+            "cannon",
+            10,
+            11
+          ],
+          [
+            "cannon",
+            11,
+            8
+          ],
+          [
+            "mortar",
+            7,
+            7
+          ],
+          [
+            "mortar",
+            12,
+            11
+          ],
+          [
+            "storage",
+            4,
+            9
+          ],
+          [
+            "storage",
+            5,
+            5
+          ],
+          [
+            "storage",
+            8,
+            11
+          ],
+          [
+            "storage",
+            9,
+            7
+          ],
+          [
+            "town_hall",
+            8,
+            9
+          ]
+        ],
+        "motif": "layered_core",
+        "seed": 42,
+        "walls": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            6
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            6,
+            9
+          ],
+          [
+            6,
+            10
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            7,
+            6
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            8,
+            6
+          ],
+          [
+            8,
+            10
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            6
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            10,
+            6
+          ],
+          [
+            10,
+            7
+          ],
+          [
+            10,
+            8
+          ],
+          [
+            10,
+            9
+          ],
+          [
+            10,
+            10
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            12,
+            3
+          ]
+        ]
+      },
+      "actions": [
+        4
+      ],
+      "summary": {
+        "base_seed": 42,
+        "motif": "layered_core",
+        "destruction": 0.0,
+        "town_hall": false,
+        "full_clear": false,
+        "finish_reason": "army_eliminated",
+        "tick": 0,
+        "decisions": 1,
+        "spent": 0,
+        "reward_components": {
+          "destruction": 0.0,
+          "milestone": 0,
+          "cost_penalty": -0.0,
+          "wall_shaping": 0.0
+        },
+        "reward_totals": {
+          "destruction": 0.0,
+          "milestone": 0.0,
+          "cost_penalty": 0.0,
+          "wall_shaping": 0.0
+        },
+        "episode_return": 0.0,
+        "view": 1
+      }
+    },
+    {
+      "base_seed": 42,
+      "motif": "layered_core",
+      "view": 2,
+      "spec": {
+        "buildings": [
+          [
+            "cannon",
+            4,
+            8
+          ],
+          [
+            "cannon",
+            10,
+            11
+          ],
+          [
+            "cannon",
+            11,
+            8
+          ],
+          [
+            "mortar",
+            7,
+            7
+          ],
+          [
+            "mortar",
+            12,
+            11
+          ],
+          [
+            "storage",
+            4,
+            9
+          ],
+          [
+            "storage",
+            5,
+            5
+          ],
+          [
+            "storage",
+            8,
+            11
+          ],
+          [
+            "storage",
+            9,
+            7
+          ],
+          [
+            "town_hall",
+            8,
+            9
+          ]
+        ],
+        "motif": "layered_core",
+        "seed": 42,
+        "walls": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            6
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            6,
+            9
+          ],
+          [
+            6,
+            10
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            7,
+            6
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            8,
+            6
+          ],
+          [
+            8,
+            10
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            6
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            10,
+            6
+          ],
+          [
+            10,
+            7
+          ],
+          [
+            10,
+            8
+          ],
+          [
+            10,
+            9
+          ],
+          [
+            10,
+            10
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            12,
+            3
+          ]
+        ]
+      },
+      "actions": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        4,
+        189,
+        189,
+        189,
+        140,
+        140,
+        140,
+        140,
+        140,
+        140,
+        140,
+        173,
+        173,
+        175,
+        108,
+        108,
+        108,
+        108,
+        108,
+        108,
+        65,
+        65,
+        245,
+        245
+      ],
+      "summary": {
+        "base_seed": 42,
+        "motif": "layered_core",
+        "destruction": 0.12903225806451613,
+        "town_hall": false,
+        "full_clear": false,
+        "finish_reason": "army_eliminated",
+        "tick": 226,
+        "decisions": 45,
+        "spent": 200,
+        "reward_components": {
+          "destruction": 0.0,
+          "milestone": 0,
+          "cost_penalty": 0.0,
+          "wall_shaping": 0.0
+        },
+        "reward_totals": {
+          "destruction": 0.12903225806451613,
+          "milestone": 0.0,
+          "cost_penalty": -0.3,
+          "wall_shaping": 0.0
+        },
+        "episode_return": -0.17096774193548386,
+        "view": 2
+      }
+    },
+    {
+      "base_seed": 42,
+      "motif": "layered_core",
+      "view": 3,
+      "spec": {
+        "buildings": [
+          [
+            "cannon",
+            4,
+            8
+          ],
+          [
+            "cannon",
+            10,
+            11
+          ],
+          [
+            "cannon",
+            11,
+            8
+          ],
+          [
+            "mortar",
+            7,
+            7
+          ],
+          [
+            "mortar",
+            12,
+            11
+          ],
+          [
+            "storage",
+            4,
+            9
+          ],
+          [
+            "storage",
+            5,
+            5
+          ],
+          [
+            "storage",
+            8,
+            11
+          ],
+          [
+            "storage",
+            9,
+            7
+          ],
+          [
+            "town_hall",
+            8,
+            9
+          ]
+        ],
+        "motif": "layered_core",
+        "seed": 42,
+        "walls": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            6
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            6,
+            9
+          ],
+          [
+            6,
+            10
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            7,
+            6
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            8,
+            6
+          ],
+          [
+            8,
+            10
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            6
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            10,
+            6
+          ],
+          [
+            10,
+            7
+          ],
+          [
+            10,
+            8
+          ],
+          [
+            10,
+            9
+          ],
+          [
+            10,
+            10
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            12,
+            3
+          ]
+        ]
+      },
+      "actions": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        2,
+        2,
+        1,
+        2,
+        1,
+        1,
+        1,
+        4,
+        177,
+        140,
+        140,
+        140,
+        140,
+        140,
+        140,
+        172,
+        172,
+        172,
+        172,
+        172,
+        172,
+        175,
+        175,
+        175,
+        68,
+        68,
+        68,
+        68,
+        68,
+        245,
+        245,
+        245,
+        245
+      ],
+      "summary": {
+        "base_seed": 42,
+        "motif": "layered_core",
+        "destruction": 0.22580645161290322,
+        "town_hall": false,
+        "full_clear": false,
+        "finish_reason": "army_eliminated",
+        "tick": 250,
+        "decisions": 47,
+        "spent": 200,
+        "reward_components": {
+          "destruction": 0.0,
+          "milestone": 0,
+          "cost_penalty": 0.0,
+          "wall_shaping": 0.0
+        },
+        "reward_totals": {
+          "destruction": 0.22580645161290322,
+          "milestone": 0.0,
+          "cost_penalty": -0.3,
+          "wall_shaping": 0.0
+        },
+        "episode_return": -0.07419354838709677,
+        "view": 3
+      }
+    },
+    {
+      "base_seed": 42,
+      "motif": "layered_core",
+      "view": 4,
+      "spec": {
+        "buildings": [
+          [
+            "cannon",
+            4,
+            8
+          ],
+          [
+            "cannon",
+            10,
+            11
+          ],
+          [
+            "cannon",
+            11,
+            8
+          ],
+          [
+            "mortar",
+            7,
+            7
+          ],
+          [
+            "mortar",
+            12,
+            11
+          ],
+          [
+            "storage",
+            4,
+            9
+          ],
+          [
+            "storage",
+            5,
+            5
+          ],
+          [
+            "storage",
+            8,
+            11
+          ],
+          [
+            "storage",
+            9,
+            7
+          ],
+          [
+            "town_hall",
+            8,
+            9
+          ]
+        ],
+        "motif": "layered_core",
+        "seed": 42,
+        "walls": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            6
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            6,
+            9
+          ],
+          [
+            6,
+            10
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            7,
+            6
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            8,
+            6
+          ],
+          [
+            8,
+            10
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            6
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            10,
+            6
+          ],
+          [
+            10,
+            7
+          ],
+          [
+            10,
+            8
+          ],
+          [
+            10,
+            9
+          ],
+          [
+            10,
+            10
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            12,
+            3
+          ]
+        ]
+      },
+      "actions": [
+        4
+      ],
+      "summary": {
+        "base_seed": 42,
+        "motif": "layered_core",
+        "destruction": 0.0,
+        "town_hall": false,
+        "full_clear": false,
+        "finish_reason": "army_eliminated",
+        "tick": 0,
+        "decisions": 1,
+        "spent": 0,
+        "reward_components": {
+          "destruction": 0.0,
+          "milestone": 0,
+          "cost_penalty": -0.0,
+          "wall_shaping": 0.0
+        },
+        "reward_totals": {
+          "destruction": 0.0,
+          "milestone": 0.0,
+          "cost_penalty": 0.0,
+          "wall_shaping": 0.0
+        },
+        "episode_return": 0.0,
+        "view": 4
+      }
+    },
+    {
+      "base_seed": 42,
+      "motif": "layered_core",
+      "view": 5,
+      "spec": {
+        "buildings": [
+          [
+            "cannon",
+            4,
+            8
+          ],
+          [
+            "cannon",
+            10,
+            11
+          ],
+          [
+            "cannon",
+            11,
+            8
+          ],
+          [
+            "mortar",
+            7,
+            7
+          ],
+          [
+            "mortar",
+            12,
+            11
+          ],
+          [
+            "storage",
+            4,
+            9
+          ],
+          [
+            "storage",
+            5,
+            5
+          ],
+          [
+            "storage",
+            8,
+            11
+          ],
+          [
+            "storage",
+            9,
+            7
+          ],
+          [
+            "town_hall",
+            8,
+            9
+          ]
+        ],
+        "motif": "layered_core",
+        "seed": 42,
+        "walls": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            6
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            6,
+            9
+          ],
+          [
+            6,
+            10
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            7,
+            6
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            8,
+            6
+          ],
+          [
+            8,
+            10
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            6
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            10,
+            6
+          ],
+          [
+            10,
+            7
+          ],
+          [
+            10,
+            8
+          ],
+          [
+            10,
+            9
+          ],
+          [
+            10,
+            10
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            12,
+            3
+          ]
+        ]
+      },
+      "actions": [
+        4
+      ],
+      "summary": {
+        "base_seed": 42,
+        "motif": "layered_core",
+        "destruction": 0.0,
+        "town_hall": false,
+        "full_clear": false,
+        "finish_reason": "army_eliminated",
+        "tick": 0,
+        "decisions": 1,
+        "spent": 0,
+        "reward_components": {
+          "destruction": 0.0,
+          "milestone": 0,
+          "cost_penalty": -0.0,
+          "wall_shaping": 0.0
+        },
+        "reward_totals": {
+          "destruction": 0.0,
+          "milestone": 0.0,
+          "cost_penalty": 0.0,
+          "wall_shaping": 0.0
+        },
+        "episode_return": 0.0,
+        "view": 5
+      }
+    },
+    {
+      "base_seed": 42,
+      "motif": "layered_core",
+      "view": 6,
+      "spec": {
+        "buildings": [
+          [
+            "cannon",
+            4,
+            8
+          ],
+          [
+            "cannon",
+            10,
+            11
+          ],
+          [
+            "cannon",
+            11,
+            8
+          ],
+          [
+            "mortar",
+            7,
+            7
+          ],
+          [
+            "mortar",
+            12,
+            11
+          ],
+          [
+            "storage",
+            4,
+            9
+          ],
+          [
+            "storage",
+            5,
+            5
+          ],
+          [
+            "storage",
+            8,
+            11
+          ],
+          [
+            "storage",
+            9,
+            7
+          ],
+          [
+            "town_hall",
+            8,
+            9
+          ]
+        ],
+        "motif": "layered_core",
+        "seed": 42,
+        "walls": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            6
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            6,
+            9
+          ],
+          [
+            6,
+            10
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            7,
+            6
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            8,
+            6
+          ],
+          [
+            8,
+            10
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            6
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            10,
+            6
+          ],
+          [
+            10,
+            7
+          ],
+          [
+            10,
+            8
+          ],
+          [
+            10,
+            9
+          ],
+          [
+            10,
+            10
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            12,
+            3
+          ]
+        ]
+      },
+      "actions": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        1,
+        1,
+        2,
+        4,
+        189,
+        189,
+        189,
+        189,
+        189,
+        189,
+        189,
+        189,
+        189,
+        189,
+        189,
+        189,
+        189,
+        189,
+        172,
+        68,
+        68,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245
+      ],
+      "summary": {
+        "base_seed": 42,
+        "motif": "layered_core",
+        "destruction": 0.16129032258064516,
+        "town_hall": false,
+        "full_clear": false,
+        "finish_reason": "tick_limit",
+        "tick": 300,
+        "decisions": 48,
+        "spent": 194,
+        "reward_components": {
+          "destruction": 0.0967741935483871,
+          "milestone": 0,
+          "cost_penalty": 0.0,
+          "wall_shaping": 0.0
+        },
+        "reward_totals": {
+          "destruction": 0.16129032258064516,
+          "milestone": 0.0,
+          "cost_penalty": -0.291,
+          "wall_shaping": 0.0
+        },
+        "episode_return": -0.12970967741935482,
+        "view": 6
+      }
+    },
+    {
+      "base_seed": 42,
+      "motif": "layered_core",
+      "view": 7,
+      "spec": {
+        "buildings": [
+          [
+            "cannon",
+            4,
+            8
+          ],
+          [
+            "cannon",
+            10,
+            11
+          ],
+          [
+            "cannon",
+            11,
+            8
+          ],
+          [
+            "mortar",
+            7,
+            7
+          ],
+          [
+            "mortar",
+            12,
+            11
+          ],
+          [
+            "storage",
+            4,
+            9
+          ],
+          [
+            "storage",
+            5,
+            5
+          ],
+          [
+            "storage",
+            8,
+            11
+          ],
+          [
+            "storage",
+            9,
+            7
+          ],
+          [
+            "town_hall",
+            8,
+            9
+          ]
+        ],
+        "motif": "layered_core",
+        "seed": 42,
+        "walls": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            6
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            6,
+            9
+          ],
+          [
+            6,
+            10
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            7,
+            6
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            8,
+            6
+          ],
+          [
+            8,
+            10
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            6
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            10,
+            6
+          ],
+          [
+            10,
+            7
+          ],
+          [
+            10,
+            8
+          ],
+          [
+            10,
+            9
+          ],
+          [
+            10,
+            10
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            12,
+            3
+          ]
+        ]
+      },
+      "actions": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        4,
+        177,
+        177,
+        177,
+        177,
+        177,
+        177,
+        146,
+        177,
+        177,
+        177,
+        177,
+        177,
+        175,
+        175,
+        112,
+        112,
+        112,
+        112,
+        112,
+        112,
+        112,
+        245,
+        245,
+        245,
+        245
+      ],
+      "summary": {
+        "base_seed": 42,
+        "motif": "layered_core",
+        "destruction": 0.3225806451612903,
+        "town_hall": false,
+        "full_clear": false,
+        "finish_reason": "army_eliminated",
+        "tick": 248,
+        "decisions": 47,
+        "spent": 196,
+        "reward_components": {
+          "destruction": 0.0,
+          "milestone": 0,
+          "cost_penalty": 0.0,
+          "wall_shaping": 0.0
+        },
+        "reward_totals": {
+          "destruction": 0.3225806451612903,
+          "milestone": 0.0,
+          "cost_penalty": -0.294,
+          "wall_shaping": 0.0
+        },
+        "episode_return": 0.02858064516129033,
+        "view": 7
+      }
+    },
+    {
+      "base_seed": 0,
+      "motif": "custom",
+      "view": 0,
+      "spec": {
+        "buildings": [
+          [
+            "cannon",
+            8,
+            10
+          ],
+          [
+            "cannon",
+            9,
+            9
+          ],
+          [
+            "cannon",
+            10,
+            6
+          ],
+          [
+            "mortar",
+            6,
+            6
+          ],
+          [
+            "mortar",
+            8,
+            5
+          ],
+          [
+            "storage",
+            4,
+            7
+          ],
+          [
+            "storage",
+            5,
+            9
+          ],
+          [
+            "storage",
+            8,
+            6
+          ],
+          [
+            "storage",
+            10,
+            7
+          ],
+          [
+            "town_hall",
+            11,
+            8
+          ]
+        ],
+        "motif": "custom",
+        "seed": 0,
+        "walls": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            7,
+            12
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            8,
+            12
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            12,
+            4
+          ],
+          [
+            12,
+            5
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            12,
+            7
+          ],
+          [
+            12,
+            8
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            12,
+            10
+          ],
+          [
+            12,
+            11
+          ],
+          [
+            12,
+            12
+          ]
+        ]
+      },
+      "actions": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        2,
+        0,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        4,
+        39,
+        44,
+        44,
+        160,
+        73,
+        160,
+        160,
+        73,
+        73,
+        73,
+        100,
+        73,
+        85,
+        85,
+        96,
+        245,
+        245,
+        245,
+        111,
+        94,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245
+      ],
+      "summary": {
+        "base_seed": 0,
+        "motif": "custom",
+        "destruction": 0.5483870967741935,
+        "town_hall": true,
+        "full_clear": false,
+        "finish_reason": "army_eliminated",
+        "tick": 288,
+        "decisions": 47,
+        "spent": 193,
+        "reward_components": {
+          "destruction": 0.0,
+          "milestone": 0,
+          "cost_penalty": 0.0,
+          "wall_shaping": 0.0
+        },
+        "reward_totals": {
+          "destruction": 0.5483870967741935,
+          "milestone": 0.5,
+          "cost_penalty": -0.2895,
+          "wall_shaping": 0.0
+        },
+        "episode_return": 0.7588870967741935,
+        "view": 0
+      }
+    },
+    {
+      "base_seed": 0,
+      "motif": "custom",
+      "view": 1,
+      "spec": {
+        "buildings": [
+          [
+            "cannon",
+            8,
+            10
+          ],
+          [
+            "cannon",
+            9,
+            9
+          ],
+          [
+            "cannon",
+            10,
+            6
+          ],
+          [
+            "mortar",
+            6,
+            6
+          ],
+          [
+            "mortar",
+            8,
+            5
+          ],
+          [
+            "storage",
+            4,
+            7
+          ],
+          [
+            "storage",
+            5,
+            9
+          ],
+          [
+            "storage",
+            8,
+            6
+          ],
+          [
+            "storage",
+            10,
+            7
+          ],
+          [
+            "town_hall",
+            11,
+            8
+          ]
+        ],
+        "motif": "custom",
+        "seed": 0,
+        "walls": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            7,
+            12
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            8,
+            12
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            12,
+            4
+          ],
+          [
+            12,
+            5
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            12,
+            7
+          ],
+          [
+            12,
+            8
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            12,
+            10
+          ],
+          [
+            12,
+            11
+          ],
+          [
+            12,
+            12
+          ]
+        ]
+      },
+      "actions": [
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        2,
+        0,
+        2,
+        1,
+        2,
+        1,
+        1,
+        2,
+        4,
+        54,
+        54,
+        54,
+        54,
+        112,
+        112,
+        170,
+        166,
+        166,
+        166,
+        106,
+        106,
+        106,
+        106,
+        108,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245
+      ],
+      "summary": {
+        "base_seed": 0,
+        "motif": "custom",
+        "destruction": 0.5806451612903226,
+        "town_hall": true,
+        "full_clear": false,
+        "finish_reason": "tick_limit",
+        "tick": 300,
+        "decisions": 46,
+        "spent": 196,
+        "reward_components": {
+          "destruction": 0.0,
+          "milestone": 0,
+          "cost_penalty": 0.0,
+          "wall_shaping": 0.0
+        },
+        "reward_totals": {
+          "destruction": 0.5806451612903225,
+          "milestone": 0.5,
+          "cost_penalty": -0.294,
+          "wall_shaping": 0.0
+        },
+        "episode_return": 0.7866451612903225,
+        "view": 1
+      }
+    },
+    {
+      "base_seed": 0,
+      "motif": "custom",
+      "view": 2,
+      "spec": {
+        "buildings": [
+          [
+            "cannon",
+            8,
+            10
+          ],
+          [
+            "cannon",
+            9,
+            9
+          ],
+          [
+            "cannon",
+            10,
+            6
+          ],
+          [
+            "mortar",
+            6,
+            6
+          ],
+          [
+            "mortar",
+            8,
+            5
+          ],
+          [
+            "storage",
+            4,
+            7
+          ],
+          [
+            "storage",
+            5,
+            9
+          ],
+          [
+            "storage",
+            8,
+            6
+          ],
+          [
+            "storage",
+            10,
+            7
+          ],
+          [
+            "town_hall",
+            11,
+            8
+          ]
+        ],
+        "motif": "custom",
+        "seed": 0,
+        "walls": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            7,
+            12
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            8,
+            12
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            12,
+            4
+          ],
+          [
+            12,
+            5
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            12,
+            7
+          ],
+          [
+            12,
+            8
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            12,
+            10
+          ],
+          [
+            12,
+            11
+          ],
+          [
+            12,
+            12
+          ]
+        ]
+      },
+      "actions": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        0,
+        2,
+        2,
+        1,
+        2,
+        0,
+        1,
+        1,
+        2,
+        1,
+        0,
+        2,
+        4,
+        16,
+        59,
+        59,
+        156,
+        156,
+        156,
+        180,
+        180,
+        180,
+        73,
+        106,
+        77,
+        77,
+        86,
+        86,
+        86,
+        86,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245
+      ],
+      "summary": {
+        "base_seed": 0,
+        "motif": "custom",
+        "destruction": 0.9032258064516129,
+        "town_hall": true,
+        "full_clear": false,
+        "finish_reason": "army_eliminated",
+        "tick": 250,
+        "decisions": 43,
+        "spent": 199,
+        "reward_components": {
+          "destruction": 0.0,
+          "milestone": 0,
+          "cost_penalty": 0.0,
+          "wall_shaping": 0.0
+        },
+        "reward_totals": {
+          "destruction": 0.9032258064516129,
+          "milestone": 0.5,
+          "cost_penalty": -0.2985,
+          "wall_shaping": 0.0
+        },
+        "episode_return": 1.1047258064516128,
+        "view": 2
+      }
+    },
+    {
+      "base_seed": 0,
+      "motif": "custom",
+      "view": 3,
+      "spec": {
+        "buildings": [
+          [
+            "cannon",
+            8,
+            10
+          ],
+          [
+            "cannon",
+            9,
+            9
+          ],
+          [
+            "cannon",
+            10,
+            6
+          ],
+          [
+            "mortar",
+            6,
+            6
+          ],
+          [
+            "mortar",
+            8,
+            5
+          ],
+          [
+            "storage",
+            4,
+            7
+          ],
+          [
+            "storage",
+            5,
+            9
+          ],
+          [
+            "storage",
+            8,
+            6
+          ],
+          [
+            "storage",
+            10,
+            7
+          ],
+          [
+            "town_hall",
+            11,
+            8
+          ]
+        ],
+        "motif": "custom",
+        "seed": 0,
+        "walls": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            7,
+            12
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            8,
+            12
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            12,
+            4
+          ],
+          [
+            12,
+            5
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            12,
+            7
+          ],
+          [
+            12,
+            8
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            12,
+            10
+          ],
+          [
+            12,
+            11
+          ],
+          [
+            12,
+            12
+          ]
+        ]
+      },
+      "actions": [
+        0,
+        2,
+        1,
+        0,
+        2,
+        2,
+        2,
+        2,
+        0,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        2,
+        4,
+        11,
+        11,
+        11,
+        150,
+        156,
+        150,
+        182,
+        182,
+        182,
+        155,
+        155,
+        84,
+        84,
+        87,
+        86,
+        96,
+        245,
+        245,
+        245,
+        245
+      ],
+      "summary": {
+        "base_seed": 0,
+        "motif": "custom",
+        "destruction": 0.3225806451612903,
+        "town_hall": false,
+        "full_clear": false,
+        "finish_reason": "army_eliminated",
+        "tick": 198,
+        "decisions": 37,
+        "spent": 195,
+        "reward_components": {
+          "destruction": 0.0,
+          "milestone": 0,
+          "cost_penalty": 0.0,
+          "wall_shaping": 0.0
+        },
+        "reward_totals": {
+          "destruction": 0.3225806451612903,
+          "milestone": 0.0,
+          "cost_penalty": -0.2925,
+          "wall_shaping": 0.0
+        },
+        "episode_return": 0.03008064516129033,
+        "view": 3
+      }
+    },
+    {
+      "base_seed": 0,
+      "motif": "custom",
+      "view": 4,
+      "spec": {
+        "buildings": [
+          [
+            "cannon",
+            8,
+            10
+          ],
+          [
+            "cannon",
+            9,
+            9
+          ],
+          [
+            "cannon",
+            10,
+            6
+          ],
+          [
+            "mortar",
+            6,
+            6
+          ],
+          [
+            "mortar",
+            8,
+            5
+          ],
+          [
+            "storage",
+            4,
+            7
+          ],
+          [
+            "storage",
+            5,
+            9
+          ],
+          [
+            "storage",
+            8,
+            6
+          ],
+          [
+            "storage",
+            10,
+            7
+          ],
+          [
+            "town_hall",
+            11,
+            8
+          ]
+        ],
+        "motif": "custom",
+        "seed": 0,
+        "walls": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            7,
+            12
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            8,
+            12
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            12,
+            4
+          ],
+          [
+            12,
+            5
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            12,
+            7
+          ],
+          [
+            12,
+            8
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            12,
+            10
+          ],
+          [
+            12,
+            11
+          ],
+          [
+            12,
+            12
+          ]
+        ]
+      },
+      "actions": [
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        2,
+        0,
+        2,
+        2,
+        1,
+        2,
+        0,
+        2,
+        4,
+        45,
+        45,
+        45,
+        45,
+        174,
+        174,
+        174,
+        174,
+        174,
+        105,
+        73,
+        85,
+        105,
+        105,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245
+      ],
+      "summary": {
+        "base_seed": 0,
+        "motif": "custom",
+        "destruction": 0.5161290322580645,
+        "town_hall": true,
+        "full_clear": false,
+        "finish_reason": "army_eliminated",
+        "tick": 210,
+        "decisions": 36,
+        "spent": 190,
+        "reward_components": {
+          "destruction": 0.0,
+          "milestone": 0,
+          "cost_penalty": 0.0,
+          "wall_shaping": 0.0
+        },
+        "reward_totals": {
+          "destruction": 0.5161290322580645,
+          "milestone": 0.5,
+          "cost_penalty": -0.285,
+          "wall_shaping": 0.0
+        },
+        "episode_return": 0.7311290322580646,
+        "view": 4
+      }
+    },
+    {
+      "base_seed": 0,
+      "motif": "custom",
+      "view": 5,
+      "spec": {
+        "buildings": [
+          [
+            "cannon",
+            8,
+            10
+          ],
+          [
+            "cannon",
+            9,
+            9
+          ],
+          [
+            "cannon",
+            10,
+            6
+          ],
+          [
+            "mortar",
+            6,
+            6
+          ],
+          [
+            "mortar",
+            8,
+            5
+          ],
+          [
+            "storage",
+            4,
+            7
+          ],
+          [
+            "storage",
+            5,
+            9
+          ],
+          [
+            "storage",
+            8,
+            6
+          ],
+          [
+            "storage",
+            10,
+            7
+          ],
+          [
+            "town_hall",
+            11,
+            8
+          ]
+        ],
+        "motif": "custom",
+        "seed": 0,
+        "walls": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            7,
+            12
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            8,
+            12
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            12,
+            4
+          ],
+          [
+            12,
+            5
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            12,
+            7
+          ],
+          [
+            12,
+            8
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            12,
+            10
+          ],
+          [
+            12,
+            11
+          ],
+          [
+            12,
+            12
+          ]
+        ]
+      },
+      "actions": [
+        0,
+        2,
+        2,
+        0,
+        1,
+        2,
+        2,
+        2,
+        0,
+        2,
+        2,
+        1,
+        2,
+        0,
+        4,
+        59,
+        11,
+        11,
+        11,
+        184,
+        184,
+        182,
+        182,
+        182,
+        182,
+        182,
+        182,
+        87,
+        102,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245
+      ],
+      "summary": {
+        "base_seed": 0,
+        "motif": "custom",
+        "destruction": 0.6129032258064516,
+        "town_hall": true,
+        "full_clear": false,
+        "finish_reason": "army_eliminated",
+        "tick": 198,
+        "decisions": 35,
+        "spent": 196,
+        "reward_components": {
+          "destruction": 0.0,
+          "milestone": 0,
+          "cost_penalty": 0.0,
+          "wall_shaping": 0.0
+        },
+        "reward_totals": {
+          "destruction": 0.6129032258064515,
+          "milestone": 0.5,
+          "cost_penalty": -0.294,
+          "wall_shaping": 0.0
+        },
+        "episode_return": 0.8189032258064517,
+        "view": 5
+      }
+    },
+    {
+      "base_seed": 0,
+      "motif": "custom",
+      "view": 6,
+      "spec": {
+        "buildings": [
+          [
+            "cannon",
+            8,
+            10
+          ],
+          [
+            "cannon",
+            9,
+            9
+          ],
+          [
+            "cannon",
+            10,
+            6
+          ],
+          [
+            "mortar",
+            6,
+            6
+          ],
+          [
+            "mortar",
+            8,
+            5
+          ],
+          [
+            "storage",
+            4,
+            7
+          ],
+          [
+            "storage",
+            5,
+            9
+          ],
+          [
+            "storage",
+            8,
+            6
+          ],
+          [
+            "storage",
+            10,
+            7
+          ],
+          [
+            "town_hall",
+            11,
+            8
+          ]
+        ],
+        "motif": "custom",
+        "seed": 0,
+        "walls": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            7,
+            12
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            8,
+            12
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            12,
+            4
+          ],
+          [
+            12,
+            5
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            12,
+            7
+          ],
+          [
+            12,
+            8
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            12,
+            10
+          ],
+          [
+            12,
+            11
+          ],
+          [
+            12,
+            12
+          ]
+        ]
+      },
+      "actions": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        4,
+        59,
+        59,
+        11,
+        57,
+        155,
+        155,
+        118,
+        113,
+        74,
+        78,
+        78,
+        78,
+        78,
+        73,
+        73,
+        73,
+        245,
+        245
+      ],
+      "summary": {
+        "base_seed": 0,
+        "motif": "custom",
+        "destruction": 0.12903225806451613,
+        "town_hall": false,
+        "full_clear": false,
+        "finish_reason": "army_eliminated",
+        "tick": 178,
+        "decisions": 35,
+        "spent": 200,
+        "reward_components": {
+          "destruction": 0.0,
+          "milestone": 0,
+          "cost_penalty": 0.0,
+          "wall_shaping": 0.0
+        },
+        "reward_totals": {
+          "destruction": 0.12903225806451613,
+          "milestone": 0.0,
+          "cost_penalty": -0.3,
+          "wall_shaping": 0.0
+        },
+        "episode_return": -0.17096774193548386,
+        "view": 6
+      }
+    },
+    {
+      "base_seed": 0,
+      "motif": "custom",
+      "view": 7,
+      "spec": {
+        "buildings": [
+          [
+            "cannon",
+            8,
+            10
+          ],
+          [
+            "cannon",
+            9,
+            9
+          ],
+          [
+            "cannon",
+            10,
+            6
+          ],
+          [
+            "mortar",
+            6,
+            6
+          ],
+          [
+            "mortar",
+            8,
+            5
+          ],
+          [
+            "storage",
+            4,
+            7
+          ],
+          [
+            "storage",
+            5,
+            9
+          ],
+          [
+            "storage",
+            8,
+            6
+          ],
+          [
+            "storage",
+            10,
+            7
+          ],
+          [
+            "town_hall",
+            11,
+            8
+          ]
+        ],
+        "motif": "custom",
+        "seed": 0,
+        "walls": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            7,
+            12
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            8,
+            12
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            12,
+            4
+          ],
+          [
+            12,
+            5
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            12,
+            7
+          ],
+          [
+            12,
+            8
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            12,
+            10
+          ],
+          [
+            12,
+            11
+          ],
+          [
+            12,
+            12
+          ]
+        ]
+      },
+      "actions": [
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        2,
+        0,
+        2,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        2,
+        2,
+        4,
+        59,
+        59,
+        45,
+        105,
+        105,
+        161,
+        161,
+        105,
+        166,
+        166,
+        166,
+        100,
+        73,
+        117,
+        108,
+        108,
+        108,
+        245,
+        245,
+        245,
+        245,
+        245,
+        245
+      ],
+      "summary": {
+        "base_seed": 0,
+        "motif": "custom",
+        "destruction": 0.5161290322580645,
+        "town_hall": true,
+        "full_clear": false,
+        "finish_reason": "army_eliminated",
+        "tick": 230,
+        "decisions": 41,
+        "spent": 197,
+        "reward_components": {
+          "destruction": 0.0,
+          "milestone": 0,
+          "cost_penalty": 0.0,
+          "wall_shaping": 0.0
+        },
+        "reward_totals": {
+          "destruction": 0.5161290322580645,
+          "milestone": 0.5,
+          "cost_penalty": -0.2955,
+          "wall_shaping": 0.0
+        },
+        "episode_return": 0.7206290322580646,
+        "view": 7
+      }
+    }
+  ]
+}

@@ -1,8 +1,9 @@
 # Runbook: local work and the revision 2 study
 
-Run from the complete base-siege-assignment3 folder. The [team master](TEAM_MASTER.md) explains
-the project; [EXPERIMENT_PLAN.md](EXPERIMENT_PLAN.md) defines the study. These are instructions,
-not a record that the long experiments have already run.
+Run from the repository root. The [project overview](../README.md) explains the
+problem and the [results guide](RESULTS.md) identifies completed evidence. This
+runbook describes the original revision 2 workflow. Use new output paths when
+repeating it; preserve the supplied registrations and results.
 
 Use Python 3.12 and the locked environment. Keep inputs, journals and run folders on persistent
 storage. No S3, cloud provisioning or deployment is performed by these commands.
@@ -42,7 +43,7 @@ uv run python -m experiments.pools --split dev --count 200 --out bases/dev-v2.js
 
 There are 30,000 training candidates and 600 development candidates, not guaranteed accepted
 counts. Both partitions use the three training structures. Layered-core is excluded from current
-development; its historical use in software checks is disclosed in the experiment plan.
+development; its historical use in software checks does not make it an independent development result.
 
 If a pool command is interrupted, repeat that exact command with --resume. The companion
 .progress.sqlite3 database saves one committed candidate at a time. Keep it beside the pool.
