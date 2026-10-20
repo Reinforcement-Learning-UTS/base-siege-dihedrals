@@ -31,5 +31,8 @@ runs/local-*/
 **/STOP_REQUESTED.json
 **/.run.lock
 *.log
+!reference/**/*.log
+!artifacts/final-evaluation-v1.log
+!artifacts/studio-recovery-check/killed-process.log
 
 # Dependency locks such as uv.lock are intentionally versioned.
