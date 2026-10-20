@@ -7,12 +7,16 @@ let payload=null,selected='melee',pending=false,sequence=0,key='',manualKey='';
 let frames=[],times=[],cursor=0,index=0,playing=false,lastTime=0,shown=null,visualNext=null,blend=0,uiStamp='';
 let running=false,chunk=0,manual=null,manualElapsed=0,manualDuration=60,draining=false;
 let armyStamp='';
+let framePending=false;
 let effects=[],lastHitTick=-1,lastHeight=0,hover=null,displayPositions=[];
 const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const perimeter=[];
 for(let c=0;c<16;c++)perimeter.push([0,c]);for(let r=1;r<16;r++)perimeter.push([r,15]);
 for(let c=14;c>=0;c--)perimeter.push([15,c]);for(let r=14;r>=1;r--)perimeter.push([r,0]);
 function send(type,fields={}){parent.postMessage({isStreamlitMessage:true,type,...fields},'*');}
+// Sleeping boards need no animation loop. Schedule one paint after input and
+// keep requesting frames only while combat, playback or an effect is moving.
+function requestDraw(){if(!framePending&&!document.hidden){framePending=true;requestAnimationFrame(animate);}}
 // Human actions and ticks are local. No Streamlit round-trip is on this path.
 function command(kind,fields={}){
   if(!payload||payload.readonly||!manual)return;
@@ -159,7 +163,7 @@ function draw(now){
   ctx.globalAlpha=1;
 }
 function syncUI(force=false){
-  if(!shown||!payload)return;const s=payload.readonly?shown:payload.snapshot,over=Boolean(s.finish_reason),shop=s.phase==='shopping';
+  if(!shown||!payload)return;requestDraw();const s=payload.readonly?shown:payload.snapshot,over=Boolean(s.finish_reason),shop=s.phase==='shopping';
   $('btn-play').textContent=playing?'Ⅱ Pause':'▶ Play';$('btn-play').setAttribute('aria-label',playing?'Pause replay':'Play replay');
   $('timeline').value=total()?Math.round(cursor/total()*1000):0;$('replay-clock').textContent=`${clock(cursor)} / ${clock(total())}`;
   $('playback-status').textContent=cursor>=total()&&total()>0?'Finished':playing?'Playing':'Paused';
@@ -191,6 +195,8 @@ function syncUI(force=false){
   for(const line of lines){const div=document.createElement('div');div.textContent=line;$('log').append(div);}$('log').scrollTop=$('log').scrollHeight;height();
 }
 function animate(now){
+  framePending=false;
+  if(document.hidden)return;
   const dt=lastTime?Math.min(100,now-lastTime):0;lastTime=now;
   if(payload?.readonly&&playing){
     const rate=Number($('speed').value);cursor=Math.min(total(),cursor+dt*rate);
@@ -209,7 +215,9 @@ function animate(now){
       if(blend>=1){shown=visualNext=payload.snapshot;index=frames.length-1;blend=0;}
     }
   }
-  draw(payload?.readonly?cursor:now);requestAnimationFrame(animate);
+  draw(payload?.readonly?cursor:now);
+  if(playing||running||draining||(!payload?.readonly&&effects.length))requestDraw();
+  else lastTime=0;
 }
 $('btn-main').onclick=mainControl;$('btn-reset').onclick=()=>command('reset');$('btn-deploy').onclick=e=>deploy(Number($('tile').value),e.shiftKey?5:1);
 $('btn-play').onclick=()=>{if(cursor>=total())seek(0);playing=!playing;lastTime=0;syncUI(true);};
@@ -218,6 +226,7 @@ $('btn-step').onclick=()=>{playing=false;let i=index+1;while(i<frames.length&&fr
 $('timeline').oninput=()=>{playing=false;seek(Number($('timeline').value)/1000*total());};
 $('stepmode').onchange=()=>{chunk=0;syncUI(true);};
 $('speed').onchange=()=>{const fraction=manualElapsed/manualDuration;manualDuration=tickMillis();manualElapsed=fraction*manualDuration;};
+for(const id of ['ranges','paths','damage'])$(id).onchange=requestDraw;
 window.addEventListener('keydown',e=>{
   if(!payload||payload.readonly||e.repeat||['INPUT','SELECT','TEXTAREA'].includes(e.target.tagName)||e.target.isContentEditable)return;
   if(e.code==='Space'){e.preventDefault();mainControl();return;}
@@ -226,7 +235,7 @@ window.addEventListener('keydown',e=>{
 });
 $('btn-fullscreen').onclick=async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.querySelector('.boardwrap').requestFullscreen();}catch{ $('recording-note').textContent='Fullscreen is unavailable in this browser view.';}};
 cv.onclick=e=>{if(!payload||payload.readonly||shown.phase!=='battle')return;const b=cv.getBoundingClientRect(),c=Math.floor((e.clientX-b.left)/b.width*16),r=Math.floor((e.clientY-b.top)/b.height*16);const i=perimeter.findIndex(([rr,cc])=>rr===r&&cc===c);if(i>=0){$('tile').value=i;deploy(i,e.shiftKey?5:1);}};
-cv.onmousemove=e=>{if(!shown)return;const b=cv.getBoundingClientRect(),c=Math.floor((e.clientX-b.left)/b.width*16),r=Math.floor((e.clientY-b.top)/b.height*16);hover=perimeter.some(([rr,cc])=>rr===r&&cc===c)?[r,c]:null;const building=shown.buildings.find(b=>b.row===r&&b.col===c);cv.title=building?`${building.type.replaceAll('_',' ')} · ${building.hp}/${building.max_hp} HP`:`Tile (${r}, ${c})`;};cv.onmouseleave=()=>hover=null;
+cv.onmousemove=e=>{if(!shown)return;const b=cv.getBoundingClientRect(),c=Math.floor((e.clientX-b.left)/b.width*16),r=Math.floor((e.clientY-b.top)/b.height*16);hover=perimeter.some(([rr,cc])=>rr===r&&cc===c)?[r,c]:null;const building=shown.buildings.find(b=>b.row===r&&b.col===c);cv.title=building?`${building.type.replaceAll('_',' ')} · ${building.hp}/${building.max_hp} HP`:`Tile (${r}, ${c})`;requestDraw();};cv.onmouseleave=()=>{hover=null;requestDraw();};
 window.addEventListener('message',event=>{
   if(event.source!==parent||event.data.type!=='streamlit:render')return;
   const incoming=event.data.args.payload;if(!incoming)return;
@@ -252,5 +261,5 @@ window.addEventListener('message',event=>{
   syncUI(true);
 });
 window.addEventListener('resize',height);new ResizeObserver(height).observe(document.querySelector('.wrap'));
-document.addEventListener('visibilitychange',()=>{if(document.hidden){playing=false;running=false;draining=false;lastTime=0;syncUI(true);}});
-send('streamlit:componentReady',{apiVersion:1});send('streamlit:setFrameHeight',{height:780});requestAnimationFrame(animate);
+document.addEventListener('visibilitychange',()=>{if(document.hidden){playing=false;running=false;draining=false;lastTime=0;syncUI(true);}else requestDraw();});
+send('streamlit:componentReady',{apiVersion:1});send('streamlit:setFrameHeight',{height:780});requestDraw();

@@ -331,10 +331,14 @@ if readonly:
     snapshot = frames[0]
     log = [f"Decision {f['decisions']}: {describe_action(f['last_action'])} → {f['destruction']:.1%}"
            for f in frames if f["last_action"] is not None][-40:]
-    st.download_button("Download recorded episode", json.dumps(replay, indent=2),
-                       file_name="base-siege-replay.json", mime="application/json")
-    st.download_button("Download smooth HTML replay", html_bytes(replay),
-                       file_name="base-siege-attack.html", mime="text/html")
+    # Build exports only when requested. Binding the current replay also keeps
+    # a download independent of another widget's pending settings change.
+    st.download_button("Download recorded episode", lambda replay=replay: json.dumps(replay, indent=2),
+                       file_name="base-siege-replay.json", mime="application/json",
+                       key="replay_json", on_click="ignore")
+    st.download_button("Download smooth HTML replay", lambda replay=replay: html_bytes(replay),
+                       file_name="base-siege-attack.html", mime="text/html",
+                       key="replay_html", on_click="ignore")
     with st.expander("Attack result"):
         result = replay['summary']
         cols = st.columns(4)

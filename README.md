@@ -16,6 +16,8 @@ the policy still has to learn which legal choices are useful.
 Developed by **Chandan, Sreekar and Vaibhav** for **43008 Reinforcement Learning,
 University of Technology Sydney**.
 
+[Open the live demo](https://base-siege-dihedrals.streamlit.app/)
+
 ## What you can do
 
 - Play an attack manually, from buying troops to placing them around the perimeter.

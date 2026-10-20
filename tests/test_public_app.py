@@ -94,6 +94,19 @@ def test_public_evidence_modes_only_offer_demo_assets():
                 assert all(value.startswith("demo_assets/") for value in widget.options)
 
 
+def test_replay_exports_are_deferred_until_download(monkeypatch):
+    calls = []
+    monkeypatch.setattr('ui.policy_playback.html_bytes', lambda replay: calls.append(replay) or b'export')
+    app = open_app()
+    select(app, 'Mode', 'Policy replay')
+    select(app, 'Policy', 'Heuristic')
+    next(b for b in app.button if b.label == 'Generate replay').click().run(timeout=30)
+    assert not app.exception
+    assert app.session_state['replay']['summary']['finish_reason']
+    assert len(app.get('download_button')) == 2
+    assert calls == []
+
+
 def test_sessions_have_independent_games():
     first, second = open_app(), open_app()
     first.session_state["game"].step(0)
